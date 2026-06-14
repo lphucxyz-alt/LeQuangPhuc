@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio Kỹ Thuật Số | Nhập Môn Công Nghệ Số & AI</title>
+<meta name="description" content="Portfolio số hóa hành trình học tập của Lê Quang Phúc — Nhập Môn Công Nghệ Số & AI, Đại Học Công Nghệ - ĐHQGHN.">
+<meta property="og:title" content="Lê Quang Phúc | Portfolio Kỹ Thuật Số">
+<meta property="og:description" content="Portfolio số hóa hành trình học tập từ máy tính & thiết bị ngoại vi đến trí tuệ nhân tạo, giao tiếp số và liêm chính học thuật.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lphucxyz-alt.github.io/LeQuangPhuc/">
+<meta property="og:image" content="./cover.jpg">
+<meta name="theme-color" content="#0a0f2e">
+<script>(function(){var manual=localStorage.getItem("portfolio_theme_manual")==="1";var saved=localStorage.getItem("portfolio_theme");var h=new Date().getHours();var auto=(h>=6&&h<18)?"light":"dark";var t=manual&&saved?saved:auto;if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<script>
+  if(sessionStorage.getItem("portfolio_intro_seen")) {
+    document.documentElement.style.setProperty('--intro-delay', '0s');
+  } else {
+    document.documentElement.style.setProperty('--intro-delay', '2.2s');
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+#hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 48px 80px; text-align: center; }
+.hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 24px; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 80px); font-weight: 900; line-height: 1.1; margin-bottom: 24px; color: var(--text-main); }
+.hero-title .line2 { display: block; font-size: 0.4em; font-weight: 400; font-family: 'DM Sans', sans-serif; margin-top: 12px; color: var(--text-muted); }
+.hero-name-gradient {
+  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* Reset gradient khi light mode để tránh chữ bị mờ */
+[data-theme="light"] .hero-name-gradient {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+@keyframes cursorBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+.hero-desc { max-width: 600px; font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 40px; }
+.hero-info-cards { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 40px; }
+.info-card { display: flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 100px; padding: 8px 20px; font-size: 14px; color: var(--text-muted); backdrop-filter: blur(8px); }
+.info-card strong { color: var(--text-main); font-weight: 500; }
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+.hero-animate { opacity: 0; transform: translateY(28px); animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes heroFadeUp { to { opacity: 1; transform: translateY(0); } }
+
+section { position: relative; z-index: 1; padding: 96px 48px; }
+.section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 700; margin-bottom: 16px; color: var(--text-main); }
+.section-sub { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
+
+.chapters-header { text-align: center; margin-bottom: 56px; }
+.chapters-header .section-sub { margin: 0 auto; }
+.chapters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.chapter-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 32px; position: relative; transition: all 0.3s; text-decoration: none; display: block; backdrop-filter: blur(8px); }
+.chapter-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.chapter-number { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; color: var(--text-muted); opacity: 0.6; margin-bottom: 16px; transition: 0.3s; }
+.chapter-card:hover .chapter-number { color: var(--accent); opacity: 1; }
+.chapter-tag { display: inline-block; font-size: 11px; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 100px; background: var(--bg-main); border: 1px solid var(--border-color); color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+.chapter-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--text-main); line-height: 1.4; }
+.chapter-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+.chapter-topics { display: flex; flex-wrap: wrap; gap: 8px; }
+.topic-pill { font-size: 12px; padding: 4px 12px; border-radius: 100px; background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); }
+.chapter-arrow { position: absolute; top: 32px; right: 32px; color: var(--text-muted); font-size: 18px; transition: all 0.3s; }
+.chapter-card:hover .chapter-arrow { color: var(--accent); transform: translateX(4px); }
+
+#stats { border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
+.stat-item { padding: 40px 20px; position: relative; }
+.stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 30%; bottom: 30%; width: 1px; background: var(--border-color); }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: var(--accent); }
+.stat-label { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+
+#tasks { max-width: 1000px; margin: 0 auto; }
+.tasks-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: start; }
+.tasks-list { display: flex; flex-direction: column; }
+.task-item { display: flex; gap: 16px; padding: 20px; border: 1px solid transparent; border-bottom-color: var(--border-color); transition: all 0.2s; border-radius: 8px; cursor: pointer; }
+.task-item:hover { background: var(--bg-card); }
+.task-item.active { background: var(--bg-card); border-color: var(--accent); }
+.task-num { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-muted); }
+.task-item.active .task-num { background: var(--accent); color: var(--btn-text); border-color: var(--accent); }
+.task-meta { flex: 1; }
+.task-name { font-size: 15px; font-weight: 500; margin-bottom: 6px; color: var(--text-main); }
+.task-pts { font-size: 12px; color: var(--gold); }
+
+.task-detail { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 40px; position: sticky; top: 100px; backdrop-filter: blur(8px); }
+.td-label { font-size: 11px; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+.td-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-bottom: 16px; color: var(--text-main); }
+.td-desc { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 32px; }
+.td-criteria { display: flex; flex-direction: column; gap: 16px; }
+.criteria-row { display: flex; gap: 16px; }
+.criteria-level { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; font-size: 12px; font-family: 'JetBrains Mono', monospace; display: flex; align-items: center; justify-content: center; font-weight: 600; background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-main); }
+.criteria-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.criteria-text strong { color: var(--text-main); display: block; margin-bottom: 4px; font-weight: 500; }
+
+.guide-box { max-width: 800px; margin: 0 auto; text-align: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 64px 48px; backdrop-filter: blur(8px); }
+.badge-soon { position: absolute; top: 16px; right: 52px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; padding: 3px 10px; border-radius: 100px; background: rgba(251, 191, 36, 0.12); border: 1px solid rgba(251, 191, 36, 0.35); color: var(--gold); text-transform: uppercase; pointer-events: none; }
+
+@media (max-width: 768px) {
+  section { padding: 64px 24px; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .tasks-layout { grid-template-columns: 1fr; }
+  .task-detail { position: static; padding: 24px; }
+  .guide-box { padding: 40px 24px; }
+}
+</style>
+  <link rel="apple-touch-icon" href="https://lequangphuc.github.io/portfolio/cover.jpg">
+</head>
+<body>
+
+<div id="intro-screen">
+  <script>if(sessionStorage.getItem("portfolio_intro_seen")) document.getElementById("intro-screen").style.display = "none";</script>
+  <div class="intro-logo">Portfolio<span>.dev</span></div>
+  <div class="intro-tagline">Nhập Môn Công Nghệ Số &amp; AI</div>
+  <div class="intro-bar-wrap"><div class="intro-bar"></div></div>
+</div>
+
+<div id="cursor-dot"></div>
+<canvas id="particles-canvas"></canvas>
+
+<nav id="navbar">
+  <div class="nav-brand">Portfolio Số</div>
+  <div class="nav-links">
+    <a href="#hero" class="active">Trang chủ</a>
+    <a href="#about">Về tôi</a>
+    <a href="#chapters">Bài giảng</a>
+    <a href="#tasks">Nhiệm vụ</a>
+    <a href="projects.html">Dự án</a>
+    <a href="reflection.html">Tổng kết</a>
+  </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Chuyển đổi giao diện">☀️</button>
+  <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+</nav>
+
+<section id="hero">
+  <div class="hero-eyebrow hero-animate" style="animation-delay: calc(var(--intro-delay, 0s) + 0.15s)">Portfolio Kỹ Thuật Số · Nhập Môn Công Nghệ Số & AI</div>
+  <h1 class="hero-title hero-animate" style="animation-delay: calc(var(--intro-delay, 0s) + 0.35s)">
+    <span style="display:block; font-size:0.42em; font-weight:400; font-family:'DM Sans',sans-serif; color:var(--text-muted); margin-bottom:10px; letter-spacing:0.02em;">Xin chào, tôi là</span>
+    <span class="hero-name-gradient">Lê Quang Phúc</span>
+    <span class="line2">Kỹ thuật Máy tính · MSV 25020748 · Đại Học Công Nghệ - ĐHQGHN</span>
+  </h1>
+  <div class="hero-animate" style="font-family:'JetBrains Mono',monospace; font-size:clamp(13px,1.8vw,17px); color:var(--accent); margin-bottom:28px; min-height:26px; animation-delay: calc(var(--intro-delay, 0s) + 0.50s);">
+    <span id="typingText"></span><span style="display:inline-block;width:2px;height:1em;background:var(--accent);margin-left:2px;vertical-align:text-bottom;animation:cursorBlink 1s step-end infinite;"></span>
+  </div>
+  <p class="hero-desc hero-animate" style="animation-delay: calc(var(--intro-delay, 0s) + 0.52s)">
+    Portfolio số hóa hành trình học tập từ máy tính & thiết bị ngoại vi đến trí tuệ nhân tạo,
+    giao tiếp số và liêm chính học thuật.
+  </p>
+  <div class="hero-info-cards hero-animate" style="animation-delay: calc(var(--intro-delay, 0s) + 0.68s)">
+    <div class="info-card">MSV: <strong>25020748</strong></div>
+    <div class="info-card">Ngành: <strong>Kỹ thuật Máy tính</strong></div>
+    <div class="info-card">Môn: <strong>Nhập môn Công nghệ số & AI</strong></div>
+    <div class="info-card">GV: <strong>Vũ Hải Phương</strong></div>
+    <div class="info-card">Học kỳ: <strong>HK2 · 2025–2026</strong></div>
+  </div>
+  <div class="hero-cta hero-animate" style="animation-delay: calc(var(--intro-delay, 0s) + 0.82s)">
+    <a href="#chapters" class="btn-step btn-step-1">Xem bài giảng</a>
+    <a href="#tasks" class="btn-step btn-step-2">Xem nhiệm vụ</a>
+    <a href="#guide-section" class="btn-step btn-step-3">Hướng dẫn sử dụng</a>
+  </div>
+</section>
+
+
+<div class="divider"></div>
+<section id="about">
+  <div class="section-label reveal">Giới thiệu bản thân</div>
+  <h2 class="section-title reveal">Về tôi</h2>
+  <div class="about-content reveal" style="max-width: 800px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 48px; backdrop-filter: blur(8px);">
+    <p style="font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;">
+      Xin chào, tôi là <strong>Lê Quang Phúc</strong> (MSV: <strong>25020748</strong>), sinh viên chuyên ngành <strong>Kỹ thuật Máy tính</strong> tại <strong>Đại Học Công Nghệ - Đại học Quốc gia Hà Nội (UET-VNU)</strong>.
+    </p>
+    <p style="font-size: 16px; color: var(--text-muted); line-height: 1.8;">
+      Với niềm đam mê khám phá sự giao thoa giữa phần cứng và phần mềm, tôi luôn mong muốn ứng dụng công nghệ số và Trí tuệ Nhân tạo (AI) vào việc giải quyết các bài toán kỹ thuật thực tế. Portfolio này là nơi tôi lưu giữ lại hành trình học hỏi, trải nghiệm và những kiến thức nền tảng quý giá trong môn học Nhập Môn Công Nghệ Số & AI.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="stats">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Chương học</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Nhiệm vụ hoàn thành</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num">10</div>
+      <div class="stat-label">Điểm tối đa</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Dự án cuối kỳ</div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<section id="chapters">
+  <div class="chapters-header reveal">
+    <div class="section-label">Nội dung môn học</div>
+    <h2 class="section-title">Tóm tắt bài giảng</h2>
+    <p class="section-sub">7 chương kiến thức từ nền tảng máy tính đến ứng dụng AI trong chuyên ngành kỹ thuật</p>
+  </div>
+  <div class="chapters-grid">
+    <a href="chapter1.html" class="chapter-card reveal">
+      <div class="chapter-number">01</div>
+      <div class="chapter-arrow">→</div>
+      <div class="chapter-tag">Hardware · Software</div>
+      <div class="chapter-title">Máy tính và thiết bị ngoại vi</div>
+      <div class="chapter-desc">Nền tảng máy tính, công nghệ số, hệ điều hành. CPU tích hợp NPU, RAM DDR5, kiến trúc máy tính thế hệ AI.</div>
+      <div class="chapter-topics">
+        <span class="topic-pill">CPU / NPU</span>
+        <span class="topic-pill">Hệ điều hành</span>
+      </div>
+    </a>
+    <a href="chapter2.html" class="chapter-card reveal">
+      <div class="chapter-number">02</div>
+      <div class="chapter-arrow">→</div>
+      <div class="chapter-tag">Data · Information</div>
+      <div class="chapter-title">Khai thác dữ liệu và thông tin</div>
+      <div class="chapter-desc">Kỹ năng tìm kiếm với toán tử Google, đánh giá nguồn tin bằng mô hình CRAAP, quản lý tài liệu học thuật.</div>
+      <div class="chapter-topics">
+        <span class="topic-pill">CRAAP Model</span>
+        <span class="topic-pill">Google Operators</span>
+      </div>
+    </a>
+    <a href="chapter3.html" class="chapter-card reveal">
+      <div class="chapter-number">03</div>
+      <div class="chapter-arrow">→</div>
+      <div class="chapter-tag">AI · GenAI</div>
+      <div class="chapter-title">Tổng quan về Trí tuệ nhân tạo</div>
+      <div class="chapter-desc">Phân cấp AI → ML → DL → GenAI. Prompt Engineering với mô hình CLEAR, kỹ thuật CoT (Chain-of-Thought).</div>
+      <div class="chapter-topics">
+        <span class="topic-pill">Prompt Engineering</span>
+        <span class="topic-pill">CLEAR Framework</span>
+      </div>
+    </a>
+    <a href="chapter4.html" class="chapter-card reveal">
+      <div class="chapter-number">04</div>
+      <div class="chapter-arrow">→</div>
+      <div class="chapter-tag">Collaboration</div>
+      <div class="chapter-title">Giao tiếp số và làm việc nhóm</div>
+      <div class="chapter-desc">Công cụ giao tiếp số, nền tảng hợp tác trực tuyến (Google Workspace, Notion), nguyên tắc ứng xử văn minh.</div>
+      <div class="chapter-topics">
+        <span class="topic-pill">Google Workspace</span>
+        <span class="topic-pill">Netiquette</span>
+      </div>
+    </a>
+    <a href="chapter5.html" class="chapter-card reveal">
+      <div class="chapter-number">05</div>
+      <div class="chapter-arrow">→</div>
+      <div class="chapter-tag">Creative AI</div>
+      <div class="chapter-title">Sáng tạo nội dung số</div>
+      <div class="chapter-desc">Quy trình sáng tạo nội dung đa phương tiện. Sử dụng AI tạo sinh và nguyên tắc bản quyền nội dung AI.</div>
+      <div class="chapter-topics">
+        <span class="topic-pill">AI Generative Tools</span>
+        <span class="topic-pill">Bản quyền số</span>
+      </div>
+    </a>
+    <a href="chapter6.html" class="chapter-card reveal">
+      <div class="chapter-number">06</div>
+      <div class="chapter-arrow">→</div>
+      <div class="chapter-tag">Security · Ethics</div>
+      <div class="chapter-title">An toàn và liêm chính học thuật</div>
+      <div class="chapter-desc">An ninh mạng, bảo vệ thông tin cá nhân. Nhận diện đạo văn và nguyên tắc liêm chính khi sử dụng AI.</div>
+      <div class="chapter-topics">
+        <span class="topic-pill">Cybersecurity</span>
+        <span class="topic-pill">Academic Integrity</span>
+      </div>
+    </a>
+    <a href="chapter7.html" class="chapter-card reveal">
+      <div class="chapter-number">07</div>
+      <div class="chapter-arrow">→</div>
+      <div class="chapter-tag">Applied AI</div>
+      <div class="chapter-title">Ứng dụng AI trong Kỹ thuật</div>
+      <div class="chapter-desc">AI như "kính hiển vi vạn năng" cho kỹ sư. Khai thác dữ liệu khoa học, tự động hóa quy trình kỹ thuật.</div>
+      <div class="chapter-topics">
+        <span class="topic-pill">Data Analysis</span>
+        <span class="topic-pill">Process Automation</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="tasks">
+  <div style="margin-bottom: 56px;" class="reveal">
+    <div class="section-label">Bài tập thực hành</div>
+    <h2 class="section-title">6 Nhiệm vụ Portfolio</h2>
+    <p class="section-sub">Bấm vào từng nhiệm vụ để xem yêu cầu và tiêu chí Mức 4</p>
+  </div>
+  <div class="tasks-layout">
+    <div class="tasks-list">
+      <div class="task-item active" onclick="selectTask(0)" onkeydown="if(event.key==='Enter'||event.key===' ')selectTask(0)" role="button" tabindex="0">
+        <div class="task-num">1</div>
+        <div class="task-meta">
+          <div class="task-name">Quản lý tệp & thư mục</div>
+          <div class="task-pts">Mục 1.4 · Trạng thái: Hoàn thành </div>
+        </div>
+      </div>
+      <div class="task-item" role="button" tabindex="0" onclick="selectTask(1)" onkeydown="if(event.key==='Enter'||event.key===' ')selectTask(1)">
+        <div class="task-num">2</div>
+        <div class="task-meta">
+          <div class="task-name">Tìm kiếm & đánh giá thông tin</div>
+          <div class="task-pts">Mục 2.4 · Trạng thái: Hoàn thành </div>
+        </div>
+      </div>
+      <div class="task-item" role="button" tabindex="0" onclick="selectTask(2)" onkeydown="if(event.key==='Enter'||event.key===' ')selectTask(2)">
+        <div class="task-num">3</div>
+        <div class="task-meta">
+          <div class="task-name">Viết Prompt hiệu quả</div>
+          <div class="task-pts">Mục 3.4 · Trạng thái: Hoàn thành </div>
+        </div>
+      </div>
+      <div class="task-item" role="button" tabindex="0" onclick="selectTask(3)" onkeydown="if(event.key==='Enter'||event.key===' ')selectTask(3)">
+        <div class="task-num">4</div>
+        <div class="task-meta">
+          <div class="task-name">Hợp tác trực tuyến</div>
+          <div class="task-pts">Mục 4.4 · Trạng thái: Hoàn thành </div>
+        </div>
+      </div>
+      <div class="task-item" role="button" tabindex="0" onclick="selectTask(4)" onkeydown="if(event.key==='Enter'||event.key===' ')selectTask(4)">
+        <div class="task-num">5</div>
+        <div class="task-meta">
+          <div class="task-name">Sáng tạo nội dung AI</div>
+          <div class="task-pts">Mục 5.4 · Trạng thái: Hoàn thành </div>
+        </div>
+      </div>
+      <div class="task-item" role="button" tabindex="0" onclick="selectTask(5)" onkeydown="if(event.key==='Enter'||event.key===' ')selectTask(5)">
+        <div class="task-num">6</div>
+        <div class="task-meta">
+          <div class="task-name">AI có trách nhiệm</div>
+          <div class="task-pts">Mục 6.4 · Trạng thái: Hoàn thành </div>
+        </div>
+      </div>
+    </div>
+    <div class="task-detail" id="task-detail-panel"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="guide-section">
+  <div class="guide-box reveal">
+    <div class="section-label">Hướng dẫn</div>
+    <h2 class="section-title">Cách sử dụng Portfolio</h2>
+    <p class="section-sub" style="margin: 0 auto;">
+      Portfolio số hóa này được thiết kế để lưu trữ và trình bày toàn bộ hành trình học tập môn Nhập môn Công nghệ số & AI. Bạn có thể sử dụng thanh điều hướng phía trên hoặc cuộn trang để duyệt qua bảng tóm tắt kiến thức của 7 chương học. Ở phần Nhiệm vụ thực hành, hãy bấm vào từng mục bên trái để xem chi tiết yêu cầu. Các sản phẩm dự án và phần đánh giá tổng kết cá nhân được liên kết riêng biệt để tiện theo dõi.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Portfolio Số</div>
+  <p class="footer-text">
+    Lê Quang Phúc · Nhập Môn Công Nghệ Số & AI<br>
+    Đại Học Công Nghệ - ĐHQGHN · Học kỳ 2 · 2025–2026
+  </p>
+  <div class="footer-links">
+    <a href="#hero">Trang chủ</a>
+    <a href="#chapters">Bài giảng</a>
+    <a href="projects.html">Dự án</a>
+    <a href="reflection.html">Tổng kết</a>
+  </div>
+</footer>
+
+<script src="portfolio.js"></script>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  const sections = ['hero', 'about', 'chapters', 'tasks', 'guide-section'];
+  
+  // 1. Xác định section nào đang nằm trong khung nhìn
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      const sectionTop = el.offsetTop;
+      // Trừ đi 150px (bù trừ cho chiều cao của navbar) để menu active mượt mà hơn
+      if (window.scrollY >= sectionTop - 150) {
+        current = id;
+      }
+    }
+  });
+
+  // 2. Cập nhật class 'active' cho đúng link trong menu
+  sections.forEach(id => {
+    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+    if (link) {
+      link.classList.remove('active');
+      if (id === current) {
+        link.classList.add('active');
+      }
+    }
+  });
+}, { passive: true });
+
+const tasks = [
+  {
+    name: 'Quản lý tệp và thư mục',
+    section: 'Bài tập 1 · Mục 1.4',
+    desc: 'Trình bày cấu trúc thư mục tối ưu và quy tắc đặt tên tệp đã thiết lập, kèm ảnh chụp minh họa chi tiết trên hệ điều hành thực tế.',
+    lv4: ['Cấu trúc khoa học, có chiều sâu logic rõ ràng', 'Quy tắc đặt tên sáng tạo, nhất quán, có giải thích lý do'],
+    lv3: ['Cấu trúc thư mục logic', 'Quy tắc đặt tên nhất quán với mô tả lý do thiết kế'],
+    link: 'task1.html',
+    ready: true
+  },
+  {
+    name: 'Tìm kiếm & đánh giá thông tin',
+    section: 'Bài tập 2 · Mục 2.4',
+    desc: 'Trình bày kết quả tìm kiếm học thuật bằng các toán tử nâng cao và bảng đánh giá nguồn tin theo mô hình CRAAP đã thực hiện.',
+    lv4: ['Sử dụng linh hoạt 4+ toán tử (site:, filetype:, intitle:, …)', 'Phân tích sâu sắc chiến lược tìm kiếm, lý do chọn từ khóa'],
+    lv3: ['Sử dụng thành thạo 3–4 toán tử nâng cao', 'Ảnh rõ ràng, phân tích nguồn tin sâu sắc'],
+    link: 'task2.html',
+    ready: true
+  },
+  {
+    name: 'Viết Prompt Engineering hiệu quả',
+    section: 'Bài tập 3 · Mục 3.4',
+    desc: 'So sánh Prompt ban đầu và Prompt cải tiến cùng kết quả từ AI, áp dụng kỹ thuật Role, Context, Format, Constraint.',
+    lv4: ['Thành thạo Prompt Engineering — Role, Context, Format, Constraint', 'So sánh rất sâu về cơ chế hoạt động của mô hình LLM'],
+    lv3: ['Áp dụng hiệu quả nguyên tắc viết prompt', 'So sánh và giải thích logic trước/sau cải tiến'],
+    link: 'task3.html',
+    ready: true
+  },
+  {
+    name: 'Hợp tác trực tuyến cho dự án nhóm',
+    section: 'Bài tập 4 · Mục 4.4',
+    desc: 'Minh chứng về việc sử dụng công cụ quản lý dự án nhóm (Trello, Notion, …) và cách thức phối hợp trực tuyến hiệu quả.',
+    lv4: ['Tích hợp các tính năng nâng cao của công cụ', 'Mô tả chi tiết cách tối ưu hóa quy trình làm việc nhóm'],
+    lv3: ['Sử dụng công cụ hiệu quả để lập kế hoạch và phân công', 'Ảnh chụp minh họa rõ các tính năng đã dùng'],
+    link: 'task4.html',
+    ready: true
+  },
+  {
+    name: 'Sáng tạo nội dung số với AI',
+    section: 'Bài tập 5 · Mục 5.4',
+    desc: 'Trưng bày sản phẩm nội dung số hoàn thiện (hình ảnh, video hoặc bài viết) được hỗ trợ bởi các công cụ AI tạo sinh.',
+    lv4: ['Sản phẩm rất chuyên nghiệp và sáng tạo', 'Thể hiện khả năng tận dụng tối đa các công cụ AI'],
+    lv3: ['Sản phẩm rõ ràng, hấp dẫn', 'Mô tả chi tiết các bước sản xuất và công cụ sử dụng'],
+    link: 'task5.html',
+    ready: true
+  },
+  {
+    name: 'Sử dụng AI có trách nhiệm',
+    section: 'Bài tập 6 · Mục 6.4',
+    desc: 'Trình bày bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm dựa trên các nghiên cứu đã thực hiện.',
+    lv4: ['Bộ nguyên tắc chi tiết, tư duy phản biện cao', 'Đề xuất giải pháp cụ thể cho các thách thức đạo đức AI'],
+    lv3: ['Bộ nguyên tắc cá nhân rõ ràng (5–7 điều)', 'Phân tích sâu sắc các vấn đề đạo văn AI'],
+    link: 'task6.html',
+    ready: true
+  }
+];
+
+function renderTaskDetail(idx) {
+  const t = tasks[idx];
+  const isReady = t.ready === true;
+  const btnHtml = isReady
+    ? `<a href="${t.link}" class="btn-primary" style="display:inline-flex;margin-top:32px;">Xem bài làm →</a>`
+    : `<button class="btn-primary" disabled aria-disabled="true" type="button" style="display:inline-flex;margin-top:32px;opacity:0.5;cursor:not-allowed;" title="Đang cập nhật">🕐 Đang cập nhật</button>`;
+  
+  const detailPanel = document.getElementById('task-detail-panel');
+  if (detailPanel) {
+    detailPanel.innerHTML = `
+      <div class="td-label">Nhiệm vụ ${idx + 1} · ${t.section}</div>
+      <div class="td-title">${t.name}</div>
+      <div class="td-desc">${t.desc}</div>
+      <div class="td-criteria">
+        <div class="criteria-row">
+          <div class="criteria-level">4</div>
+          <div class="criteria-text"><strong>Mức độ: Mức 4 — Điểm tối đa</strong>${t.lv4.map(c => `<br>• ${c}`).join('')}</div>
+        </div>
+        <div class="criteria-row">
+          <div class="criteria-level">3</div>
+          <div class="criteria-text"><strong>Mức độ: Mức 3 — Tốt</strong>${t.lv3.map(c => `<br>• ${c}`).join('')}</div>
+        </div>
+      </div>
+      ${btnHtml}
+    `;
+  }
+}
+
+function selectTask(idx) {
+  document.querySelectorAll('.task-item').forEach((el, i) => {
+    if (i === idx) el.classList.add('active');
+    else el.classList.remove('active');
+  });
+  renderTaskDetail(idx);
+  // VĐ1: Smooth scroll đến panel — chỉ kích hoạt trên mobile (layout 1 cột)
+  if (window.innerWidth < 768) {
+    const panel = document.getElementById('task-detail-panel');
+    if (panel) {
+      const offset = 90; // navbar 68px + padding thở 22px
+      const top = panel.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+}
+renderTaskDetail(0);
+</script>
+
+<script>
+/* === CARD MOUSE-FOLLOW GLOW === */
+document.querySelectorAll('.chapter-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%';
+    const y = ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%';
+    card.style.setProperty('--mx', x);
+    card.style.setProperty('--my', y);
+  });
+});
+</script>
+
+<script>
+/* === TYPING EFFECT — đồng bộ với intro-delay === */
+(function(){
+  const strings = [
+    'Kỹ thuật Máy tính · UET-VNU',
+    'AI Enthusiast & Builder',
+    'Nhập Môn Công Nghệ Số & AI',
+    'Đang học để tạo ra sản phẩm thực ⚡',
+    'Prompt Engineer in the making'
+  ];
+  /* Đọc --intro-delay từ CSS (có thể là "0s" hoặc "2.2s") */
+  const rawDelay = getComputedStyle(document.documentElement)
+    .getPropertyValue('--intro-delay').trim();
+  const introMs = parseFloat(rawDelay) * 1000 || 0;
+  /* Thêm 600ms buffer sau khi intro xong rồi mới bắt đầu gõ */
+  const startDelay = introMs + 600;
+
+  let si = 0, ci = 0, del = false;
+  const el = document.getElementById('typingText');
+
+  function tick(){
+    const s = strings[si];
+    el.textContent = s.substring(0, del ? --ci : ++ci);
+    let ms = del ? 35 : 65;
+    if(!del && ci === s.length){ ms = 2000; del = true; }
+    else if(del && ci === 0){ del = false; si = (si+1) % strings.length; ms = 400; }
+    setTimeout(tick, ms);
+  }
+  setTimeout(tick, startDelay);
+})();
+</script>
+
+<script>
+/* === SHOOTING STARS — hook vào particles-canvas có sẵn === */
+(function(){
+  /* Chờ portfolio.js xong hoàn toàn rồi mới bắt đầu */
+  window.addEventListener('load', function(){
+    const canvas = document.getElementById('particles-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const meteors = [];
+
+    /* Ngôi sao tĩnh nền — chỉ tạo 1 lần */
+    const bgStars = Array.from({length: 100}, ()=>({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.1 + 0.2,
+      baseOpacity: Math.random() * 0.5 + 0.15,
+      twinkleSpeed: Math.random() * 2.5 + 0.8
+    }));
+
+    function spawnMeteor(){
+      meteors.push({
+        x: Math.random() * canvas.width * 1.3,
+        y: Math.random() * canvas.height * 0.35,
+        len: Math.random() * 160 + 90,
+        speed: Math.random() * 5 + 4,
+        angle: Math.PI / 5,
+        alpha: 0.9,
+        width: Math.random() * 1.2 + 0.4
+      });
+    }
+    /* Xuất hiện ngay 1 cái, rồi mỗi 2.5s thêm 1 */
+    spawnMeteor();
+    setInterval(spawnMeteor, 2500);
+
+    let t = 0;
+    function drawExtra(){
+      t += 0.012;
+      /* Vẽ ngôi sao nền nhấp nháy */
+      bgStars.forEach(s => {
+        const o = s.baseOpacity * (0.55 + 0.45 * Math.sin(t * s.twinkleSpeed));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200,215,255,${o})`;
+        ctx.fill();
+      });
+      /* Vẽ & cập nhật sao băng */
+      for(let i = meteors.length - 1; i >= 0; i--){
+        const m = meteors[i];
+        const dx = Math.cos(m.angle) * m.len;
+        const dy = Math.sin(m.angle) * m.len;
+        const g = ctx.createLinearGradient(m.x, m.y, m.x - dx, m.y - dy);
+        g.addColorStop(0, `rgba(180,220,255,${m.alpha})`);
+        g.addColorStop(1, 'rgba(180,220,255,0)');
+        ctx.beginPath();
+        ctx.moveTo(m.x, m.y);
+        ctx.lineTo(m.x - dx, m.y - dy);
+        ctx.strokeStyle = g;
+        ctx.lineWidth = m.width;
+        ctx.stroke();
+        m.x += Math.cos(m.angle) * m.speed;
+        m.y += Math.sin(m.angle) * m.speed;
+        m.alpha -= 0.010;
+        if(m.alpha <= 0 || m.x > canvas.width + 200 || m.y > canvas.height + 200)
+          meteors.splice(i, 1);
+      }
+      requestAnimationFrame(drawExtra);
+    }
+    drawExtra();
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bài Giảng 5 · Sáng Tạo Nội Dung Số</title>
+<meta name="description" content="Bài giảng 5 — Sáng tạo nội dung số, sử dụng công cụ AI tạo sinh và hiểu rõ nguyên tắc bản quyền nội dung.">
+<meta property="og:url" content="">
+<meta property="og:image" content="./cover.jpg">
+<script>(function(){var manual=localStorage.getItem("portfolio_theme_manual")==="1";var saved=localStorage.getItem("portfolio_theme");var h=new Date().getHours();var auto=(h>=6&&h<18)?"light":"dark";var t=manual&&saved?saved:auto;if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== SUB-NAV SCROLL-SPY ===== */
+.sub-nav { position: sticky; top: 68px; left: 0; right: 0; background: var(--bg-nav); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 90; display: flex; justify-content: center; gap: 8px; padding: 10px 24px; overflow-x: auto; white-space: nowrap; }
+.sub-nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 20px; transition: all 0.2s; }
+.sub-nav a:hover, .sub-nav a.active { color: var(--accent); background: var(--bg-card-hover); }
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb { position: relative; z-index: 1; padding: 48px 48px 0; display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: var(--text-muted); }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { opacity: 0.5; }
+
+/* ===== TASK HERO ===== */
+.task-hero { position: relative; z-index: 1; padding: 30px 48px 60px; max-width: 900px; }
+.task-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.task-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--accent); }
+.task-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.15; margin-bottom: 24px; color: var(--text-main); }
+.task-hero h1 em { font-style: normal; color: var(--accent); position: relative; }
+.task-hero h1 em::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 8px; background: var(--accent); opacity: 0.2; border-radius: 4px; z-index: -1; }
+.task-hero-desc { font-size: 17px; line-height: 1.8; color: var(--text-muted); max-width: 650px; margin-bottom: 36px; }
+.meta-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.meta-pill { display: flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 100px; padding: 8px 18px; font-size: 13px; color: var(--text-muted); backdrop-filter: blur(8px); transition: border-color 0.3s; }
+.meta-pill:hover { border-color: var(--accent); }
+.meta-pill strong { color: var(--text-main); font-weight: 600; }
+
+/* ===== SECTIONS ===== */
+section { position: relative; z-index: 1; padding: 80px 48px; }
+.section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 700; margin-bottom: 16px; color: var(--text-main); }
+.section-sub { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 640px; }
+
+/* ===== OVERVIEW GRID ===== */
+.overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 48px; }
+.ov-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 32px 24px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+.ov-card:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-4px); box-shadow: var(--glow); }
+.ov-icon { font-size: 32px; margin-bottom: 16px; display: inline-block; }
+.ov-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
+.ov-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text-main); }
+.ov-sub { font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+/* ===== CONTENT CARDS ===== */
+.content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 32px; }
+.content-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 28px; transition: all 0.3s; }
+.content-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--glow); }
+.content-card-icon { font-size: 28px; margin-bottom: 14px; }
+.content-card-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 10px; }
+.content-card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+/* ===== DEFINITION BOX ===== */
+.def-box { background: var(--bg-card); border: 1px solid var(--border-color); border-left: 4px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 28px 32px; margin: 24px 0; }
+.def-box-term { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.def-box-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; }
+.def-box-text strong { color: var(--text-main); }
+
+/* ===== LEVEL SECTION ===== */
+.level-section { background: linear-gradient(135deg, rgba(79,195,247,0.06), rgba(124,131,245,0.06)); border: 1px solid rgba(79,195,247,0.3); border-radius: var(--r); padding: 48px; margin-top: 48px; position: relative; overflow: hidden; }
+.level-section::after { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(79,195,247,0.1) 0%, transparent 70%); transform: translate(30%, -30%); pointer-events: none; }
+.level-header { display: flex; align-items: center; gap: 20px; margin-bottom: 32px; }
+.level-num { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; background: var(--accent); color: var(--btn-text); flex-shrink: 0; box-shadow: 0 0 20px rgba(79, 195, 247, 0.4); }
+.level-header-text h3 { font-size: 22px; font-weight: 700; color: var(--text-main); margin-bottom: 6px; }
+.level-header-text p { font-size: 15px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+.level-items { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
+.level-item { display: flex; align-items: flex-start; gap: 16px; font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+.level-item::before { content: '✓'; color: var(--accent); font-weight: 900; font-size: 18px; flex-shrink: 0; margin-top: -2px; }
+
+/* ===== REFLECTION BOX ===== */
+.reflection-box { background: var(--bg-card); border-left: 4px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 40px; margin-top: 40px; backdrop-filter: blur(8px); }
+.reflection-box p { font-size: 16px; color: var(--text-muted); line-height: 1.8; }
+.reflection-box p + p { margin-top: 20px; }
+.reflection-box strong { color: var(--text-main); font-weight: 600; }
+
+/* ===== NAV BUTTONS ===== */
+.nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 64px 48px; gap: 16px; position: relative; z-index: 1; flex-wrap: wrap; }
+.btn-primary { padding: 16px 36px; border-radius: 100px; background: var(--accent); color: var(--btn-text); font-weight: 600; font-size: 15px; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(79, 195, 247, 0.2); }
+.btn-primary:hover { background: var(--accent-alt); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(124, 131, 245, 0.4); }
+.btn-outline { padding: 16px 36px; border-radius: 100px; border: 1px solid var(--border-color); color: var(--text-main); font-size: 15px; font-weight: 600; text-decoration: none; background: transparent; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-card); transform: translateY(-2px); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .breadcrumb, .task-hero, section, .nav-buttons { padding-left: 24px; padding-right: 24px; }
+  .task-hero h1 { font-size: 36px; }
+  .sub-nav { top: 68px; padding: 8px 16px; justify-content: flex-start; }
+}
+</style>
+  <link rel="apple-touch-icon" href="https://lequangphuc.github.io/portfolio/cover.jpg">
+</head>
+<body>
+
+<div id="intro-screen">
+  <script>if(sessionStorage.getItem("portfolio_intro_seen")) document.getElementById("intro-screen").style.display = "none";</script>
+  <div class="intro-logo">Portfolio<span>.dev</span></div>
+  <div class="intro-tagline">Nhập Môn Công Nghệ Số &amp; AI</div>
+  <div class="intro-bar-wrap"><div class="intro-bar"></div></div>
+</div>
+
+<div id="cursor-dot"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">Portfolio Số</a>
+  <div class="nav-links">
+    <a href="index.html">Trang chủ</a>
+    <a href="index.html#about">Về tôi</a>
+    <a href="index.html#chapters" class="active">Bài giảng</a>
+    <a href="index.html#tasks">Nhiệm vụ</a>
+    <a href="projects.html">Dự án</a>
+    <a href="reflection.html">Tổng kết</a>
+  </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Chuyển đổi giao diện">☀️</button>
+  <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+</nav>
+
+<!-- SUB-NAV (scroll-spy) -->
+<div class="sub-nav">
+  <a href="#overview">Tổng quan</a>
+  <a href="#process">Quy trình sáng tạo</a>
+  <a href="#tools">Công cụ AI</a>
+  <a href="#copyright">Bản quyền số</a>
+  <a href="#reflection">Nhận xét</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb reveal">
+  <a href="index.html">Portfolio</a>
+  <span>/</span>
+  <a href="index.html#chapters" class="active">Bài giảng</a>
+  <span>/</span>
+  Bài giảng 5
+</div>
+
+<!-- HERO -->
+<div class="task-hero">
+  <div class="task-eyebrow reveal">Bài Giảng 5 · Chương 5 · Content Creation</div>
+  <h1 class="reveal">Sáng Tạo<br><em>Nội Dung</em> Số</h1>
+  <p class="task-hero-desc reveal">
+    Làm chủ quy trình sáng tạo đa phương tiện với sự hỗ trợ của các công cụ AI tạo sinh, đồng thời tuân thủ chặt chẽ các nguyên tắc về bản quyền số.
+  </p>
+  <div class="meta-pills reveal">
+    <div class="meta-pill">📅 <strong>Chương 5 · Tuần 9–10</strong></div>
+    <div class="meta-pill">🎨 <strong>Creative AI · Media</strong></div>
+    <div class="meta-pill">©️ <strong>Copyright</strong></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION: TỔNG QUAN -->
+<section id="overview">
+  <div class="section-label reveal">Tổng quan chương học</div>
+  <h2 class="section-title reveal">Từ ý tưởng đến sản phẩm số</h2>
+  <p class="section-sub reveal">
+    Chương 5 giới thiệu quy trình hiện thực hóa các ý tưởng thành những sản phẩm nội dung đa phương tiện, tận dụng sức mạnh của Trí tuệ Nhân tạo.
+  </p>
+  <div class="overview-grid">
+    <div class="ov-card reveal">
+      <div class="ov-icon">📝</div>
+      <div class="ov-label">Văn bản</div>
+      <div class="ov-val">Text Generation</div>
+      <div class="ov-sub">Viết lách, tóm tắt, tổng hợp nội dung với ChatGPT, Gemini.</div>
+    </div>
+    <div class="ov-card reveal">
+      <div class="ov-icon">🖼️</div>
+      <div class="ov-label">Hình ảnh</div>
+      <div class="ov-val">Image GenAI</div>
+      <div class="ov-sub">Sáng tạo hình ảnh từ văn bản bằng Midjourney, DALL-E.</div>
+    </div>
+    <div class="ov-card reveal">
+      <div class="ov-icon">🎥</div>
+      <div class="ov-label">Video / Audio</div>
+      <div class="ov-val">Multimedia AI</div>
+      <div class="ov-sub">Tạo video, giọng nói AI, phụ đề tự động cho nội dung truyền thông.</div>
+    </div>
+    <div class="ov-card reveal">
+      <div class="ov-icon">©️</div>
+      <div class="ov-label">Pháp lý</div>
+      <div class="ov-val">Bản quyền số</div>
+      <div class="ov-sub">Creative Commons, Fair Use và ranh giới bản quyền khi dùng AI.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: QUY TRÌNH SÁNG TẠO -->
+<section id="process">
+  <div class="section-label reveal">Quy trình thực thi</div>
+  <h2 class="section-title reveal">Quy trình Sáng tạo Nội dung</h2>
+  <p class="section-sub reveal">
+    Bất kỳ sản phẩm truyền thông hay kỹ thuật nào cũng cần tuân theo một quy trình phát triển logic để đảm bảo chất lượng.
+  </p>
+
+  <div class="level-section reveal" style="margin-top: 40px;">
+    <div class="level-header">
+      <div class="level-num">⚙️</div>
+      <div class="level-header-text">
+        <h3>Các bước trong quy trình sáng tạo</h3>
+        <p>Pre-production → Production → Post-production</p>
+      </div>
+    </div>
+    <div class="level-items">
+      <div class="level-item">
+        <strong>Tiền kỳ (Pre-production):</strong> Lên ý tưởng (Brainstorming), xác định đối tượng mục tiêu, thu thập tư liệu và viết kịch bản/dàn ý. AI có thể đóng vai trò đối tác phản biện ý tưởng ở bước này.
+      </div>
+      <div class="level-item">
+        <strong>Sản xuất (Production):</strong> Quay phim, thu âm, viết nội dung thô, hoặc prompt để AI tạo ra các khung hình cơ bản.
+      </div>
+      <div class="level-item">
+        <strong>Hậu kỳ (Post-production):</strong> Chỉnh sửa, cắt ghép, thêm hiệu ứng, điều chỉnh màu sắc và âm thanh. AI giúp tự động hóa việc xóa phông, lọc tạp âm và tạo phụ đề.
+      </div>
+      <div class="level-item">
+        <strong>Phân phối (Distribution):</strong> Xuất bản sản phẩm lên các nền tảng phù hợp (YouTube, Website, Mạng xã hội) với định dạng tối ưu.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: CÔNG CỤ AI -->
+<section id="tools">
+  <div class="section-label reveal">Hệ sinh thái AI</div>
+  <h2 class="section-title reveal">Công cụ AI Tạo sinh (GenAI Tools)</h2>
+  <p class="section-sub reveal">
+    Sự phát triển của GenAI đã dân chủ hóa việc sáng tạo nghệ thuật và nội dung số.
+  </p>
+
+  <div class="content-grid">
+    <div class="content-card reveal">
+      <div class="content-card-icon">🎨</div>
+      <div class="content-card-title">Thiết kế & Đồ họa</div>
+      <div class="content-card-desc"><strong>Midjourney, DALL-E 3, Adobe Firefly:</strong> Biến mô tả văn bản thành hình ảnh minh họa chất lượng cao chỉ trong vài giây. Canva tích hợp AI giúp thiết kế bố cục nhanh chóng.</div>
+    </div>
+    <div class="content-card reveal">
+      <div class="content-card-icon">✍️</div>
+      <div class="content-card-title">Viết lách & Ý tưởng</div>
+      <div class="content-card-desc"><strong>ChatGPT, Claude, Notion AI:</strong> Hỗ trợ viết bài, tóm tắt tài liệu dài, hoặc tạo ra nhiều phương án tiêu đề khác nhau để A/B Testing.</div>
+    </div>
+    <div class="content-card reveal">
+      <div class="content-card-icon">🎬</div>
+      <div class="content-card-title">Video & Âm thanh</div>
+      <div class="content-card-desc"><strong>Sora (OpenAI), Runway, ElevenLabs:</strong> Tạo video từ văn bản, hoặc tạo giọng đọc nhân tạo (Text-to-Speech) truyền cảm như người thật.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: BẢN QUYỀN -->
+<section id="copyright">
+  <div class="section-label reveal">Đạo đức & Pháp luật</div>
+  <h2 class="section-title reveal">Bản quyền số và AI</h2>
+  <p class="section-sub reveal">
+    Sử dụng AI để sáng tạo mang lại nhiều rủi ro về pháp lý nếu bạn không hiểu rõ ranh giới của bản quyền.
+  </p>
+
+  <div class="def-box reveal" style="margin-top: 40px;">
+    <div class="def-box-term">Vùng xám của Bản quyền AI</div>
+    <div class="def-box-text">
+      Theo luật hiện hành ở hầu hết các quốc gia, <strong>AI không được công nhận là tác giả</strong>. Tuy nhiên, việc các mô hình AI thu thập dữ liệu (crawl data) có bản quyền từ Internet để huấn luyện đang gây ra tranh cãi lớn về pháp lý (copyright infringement). 
+    </div>
+  </div>
+
+  <div class="content-grid" style="margin-top: 32px;">
+    <div class="content-card reveal">
+      <div class="content-card-icon">©️</div>
+      <div class="content-card-title">Quyền Tác Giả (Copyright)</div>
+      <div class="content-card-desc">Tự động phát sinh khi tác phẩm được định hình. Bảo vệ hình thức thể hiện, không bảo vệ ý tưởng.</div>
+    </div>
+    <div class="content-card reveal">
+      <div class="content-card-icon">⚖️</div>
+      <div class="content-card-title">Sử dụng Hợp lý (Fair Use)</div>
+      <div class="content-card-desc">Cho phép sử dụng một phần tác phẩm có bản quyền mà không cần xin phép cho mục đích phê bình, tin tức, học thuật.</div>
+    </div>
+    <div class="content-card reveal">
+      <div class="content-card-icon">🄯</div>
+      <div class="content-card-title">Creative Commons (CC)</div>
+      <div class="content-card-desc">Hệ thống giấy phép mở, cho phép tác giả chia sẻ tác phẩm của mình theo các điều kiện linh hoạt (ví dụ: CC-BY, CC-NC).</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: NHẬN XÉT -->
+<section id="reflection">
+  <div class="section-label reveal">Góc nhìn cá nhân</div>
+  <h2 class="section-title reveal">Sáng tạo không bị giới hạn bởi công cụ</h2>
+  <div class="reflection-box reveal">
+    <p>
+      Với một sinh viên Kỹ thuật, đôi khi việc thiết kế giao diện web hay làm slide thuyết trình đẹp mắt là một trở ngại. Sự ra đời của <strong>AI Tạo sinh (GenAI)</strong> đã lấp đầy khoảng trống đó. Tôi có thể yêu cầu DALL-E tạo ra các icon vector cho dự án, hoặc dùng ChatGPT để chỉnh sửa lại đoạn văn cho mượt mà.
+    </p>
+    <p>
+      Tuy nhiên, tôi nhận thức rõ rằng: <strong>Công cụ không thay thế tư duy sáng tạo</strong>. Nếu không có kiến thức nền tảng về màu sắc, bố cục và kỹ năng Prompting tốt, kết quả từ AI vẫn chỉ là những sản phẩm công nghiệp vô hồn, dễ dàng vi phạm bản quyền hoặc mang tính đạo văn.
+    </p>
+  </div>
+</section>
+
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <a href="chapter4.html" class="btn-outline">← Chương trước</a>
+  <a href="chapter6.html" class="btn-primary">Chương tiếp theo →</a>
+</div>
+
+<footer>
+  <div class="footer-brand">Portfolio Số</div>
+  <p class="footer-text">
+    Lê Quang Phúc · Nhập Môn Công Nghệ Số & AI<br>
+    Đại Học Công Nghệ - ĐHQGHN · Học kỳ 2 · 2025–2026
+  </p>
+</footer>
+
+<script src="portfolio.js"></script>
+<script>
+// ===== SUB-NAV SCROLL-SPY =====
+const subNavSections = ['overview', 'process', 'tools', 'copyright', 'reflection'];
+window.addEventListener('scroll', () => {
+  if (typeof isSubNavClicking !== 'undefined' && isSubNavClicking) return;
+  subNavSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const link = document.querySelector(`.sub-nav a[href="#${id}"]`);
+    if (link) {
+      if (rect.top <= 140 && rect.bottom > 140) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    }
+  });
+}, { passive: true });
+
+// ===== SMOOTH SCROLL cho sub-nav =====
+let isSubNavClicking = false;
+document.querySelectorAll('.sub-nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        isSubNavClicking = true;
+        const offset = 92; // navbar + sub-nav height
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+        setTimeout(() => isSubNavClicking = false, 800);
+      }
+      document.querySelectorAll('.sub-nav a').forEach(item => item.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>

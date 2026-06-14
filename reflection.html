@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tổng Kết Hành Trình | Portfolio Kỹ Thuật Số</title>
+<meta name="description" content="Nhìn lại hành trình học tập Nhập Môn Công Nghệ Số & AI — kỹ năng đã đạt được, thách thức vượt qua và định hướng tương lai.">
+<meta property="og:title" content="Tổng Kết Hành Trình | Lê Quang Phúc">
+<meta property="og:type" content="website">
+<meta property="og:url" content="">
+<meta property="og:image" content="./cover.jpg">
+<meta name="theme-color" content="#0a0f2e">
+<script>(function(){var manual=localStorage.getItem("portfolio_theme_manual")==="1";var saved=localStorage.getItem("portfolio_theme");var h=new Date().getHours();var auto=(h>=6&&h<18)?"light":"dark";var t=manual&&saved?saved:auto;if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* CSS DÀNH RIÊNG CHO TRANG REFLECTION */
+.reflection-header {
+  padding: 160px 48px 60px 48px;
+  max-width: 900px; margin: 0 auto;
+  text-align: center;
+}
+.header-tag {
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: 2px; margin-bottom: 16px;
+}
+.header-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900; line-height: 1.2; margin-bottom: 24px; color: var(--text-main);
+}
+.header-desc {
+  font-size: 17px; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.8;
+}
+
+.container {
+  max-width: 1000px; margin: 0 auto; padding: 0 48px 100px 48px;
+}
+
+.reflection-section { margin-bottom: 80px; }
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: 28px;
+  font-weight: 700; margin-bottom: 32px; color: var(--text-main);
+  display: flex; align-items: center; gap: 16px;
+}
+.section-title::after {
+  content: ''; flex: 1; height: 1px; background: var(--border-color);
+}
+
+.timeline {
+  display: flex; flex-direction: column; gap: 32px;
+  position: relative; padding-left: 24px;
+}
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+  width: 2px; background: var(--border-color);
+}
+.timeline-item { position: relative; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -29px; top: 8px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--bg-main); border: 2px solid var(--accent);
+  transition: background 0.3s;
+}
+.timeline-item:hover::before { background: var(--accent); }
+.time-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
+.time-desc { color: var(--text-muted); font-size: 15px; line-height: 1.7; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.skill-card, .challenge-card {
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  padding: 32px; border-radius: var(--r);
+  transition: all 0.3s ease; backdrop-filter: blur(8px);
+}
+.skill-card:hover, .challenge-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.card-icon { font-size: 32px; margin-bottom: 16px; display: inline-block; }
+.card-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--text-main); }
+.card-desc { color: var(--text-muted); font-size: 15px; line-height: 1.7; }
+
+.quote-block {
+  background: var(--bg-card); border-left: 4px solid var(--accent);
+  padding: 32px; border-radius: 0 var(--r) var(--r) 0; margin: 40px 0;
+  backdrop-filter: blur(8px);
+}
+.quote-text { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; margin-bottom: 12px; color: var(--text-main); line-height: 1.6;}
+.quote-author { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); }
+
+.future-list { list-style: none; display: flex; flex-direction: column; gap: 24px; padding: 0;}
+.future-list li {
+  display: flex; gap: 20px; background: var(--bg-card);
+  padding: 24px; border-radius: var(--r); border: 1px solid var(--border-color);
+  backdrop-filter: blur(8px); transition: 0.3s;
+}
+.future-list li:hover { border-color: var(--accent); transform: translateX(4px); }
+.future-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 600;
+  color: var(--accent); min-width: 28px;
+}
+.future-content h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--text-main); }
+.future-content p { color: var(--text-muted); font-size: 15px; line-height: 1.7;}
+
+/* === CSS CHO THANH ĐIỀU HƯỚNG CUỐI TRANG === */
+.nav-buttons {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 48px; margin-top: 40px; border-top: 1px solid var(--border-color);
+  gap: 16px; flex-wrap: wrap;
+}
+.btn-primary {
+  padding: 14px 32px; border-radius: 100px; background: var(--accent);
+  color: var(--btn-text); font-weight: 600; font-size: 15px;
+  text-decoration: none; border: none; cursor: pointer; transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--accent-alt); transform: translateY(-2px); }
+.btn-outline {
+  padding: 14px 32px; border-radius: 100px; border: 1px solid var(--border-color);
+  color: var(--text-main); font-size: 15px; font-weight: 500;
+  text-decoration: none; background: transparent; cursor: pointer; transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-card); transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  .reflection-header { padding: 120px 24px 40px 24px; }
+  .container { padding: 0 24px 60px 24px; }
+  .future-list li { flex-direction: column; gap: 12px; }
+  .nav-buttons { flex-direction: column; align-items: stretch; }
+  .nav-buttons a { justify-content: center; text-align: center; }
+}
+</style>
+  <link rel="apple-touch-icon" href="https://lequangphuc.github.io/portfolio/cover.jpg">
+</head>
+<body>
+
+<div id="intro-screen">
+  <script>if(sessionStorage.getItem("portfolio_intro_seen")) document.getElementById("intro-screen").style.display = "none";</script>
+  <div class="intro-logo">Portfolio<span>.dev</span></div>
+  <div class="intro-tagline">Nhập Môn Công Nghệ Số &amp; AI</div>
+  <div class="intro-bar-wrap"><div class="intro-bar"></div></div>
+</div>
+
+
+<canvas id="particles-canvas"></canvas>
+<div id="cursor-dot"></div>
+
+<nav id="navbar">
+  <div class="nav-brand">Portfolio Số</div>
+  <div class="nav-links">
+    <a href="index.html">Trang chủ</a>
+    <a href="index.html#about">Về tôi</a>
+    <a href="index.html#chapters">Bài giảng</a>
+    <a href="index.html#tasks">Nhiệm vụ</a>
+    <a href="projects.html">Dự án</a>
+    <a href="reflection.html" class="active">Tổng kết</a>
+  </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Chuyển đổi giao diện">☀️</button>
+  <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+</nav>
+
+<div class="sub-nav">
+  <a href="#hanh-trinh">1. Hành trình</a>
+  <a href="#nang-luc">2. Năng lực số</a>
+  <a href="#thach-thuc">3. Thách thức</a>
+  <a href="#tuong-lai">4. Tương lai</a>
+</div>
+
+<header class="reflection-header">
+  <div class="header-tag reveal">Reflection</div>
+  <h1 class="header-title reveal">Nhìn Lại Hành Trình Số Hóa & Trí Tuệ Nhân Tạo</h1>
+  <p class="header-desc reveal">Một học kỳ khám phá thế giới công nghệ, từ những khái niệm phần cứng cơ bản đến kỷ nguyên bùng nổ của Generative AI và trách nhiệm của người làm chủ tri thức.</p>
+</header>
+
+<div class="container">
+
+  <section class="reflection-section" id="hanh-trinh">
+    <h2 class="section-title reveal">Hành trình trưởng thành</h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <h3 class="time-title">Nhận thức ban đầu</h3>
+        <p class="time-desc">Trước khi bắt đầu, tôi từng nghĩ AI và Công nghệ số là những điều gì đó xa xôi, phức tạp chỉ dành cho các kỹ sư lập trình chuyên sâu. Việc sử dụng máy tính hay mạng internet đối với tôi chỉ dừng lại ở mức công cụ giải trí và tra cứu thông tin cơ bản.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <h3 class="time-title">Bước ngoặt tư duy</h3>
+        <p class="time-desc">Qua từng chương học, từ việc hiểu rõ kiến trúc phần cứng, cách thức mã hóa dữ liệu đến nghệ thuật giao tiếp số và viết prompt, tầm nhìn của tôi đã hoàn toàn thay đổi. Tôi nhận ra công nghệ số không đáng sợ, mà nó là một ngôn ngữ mới của thời đại mà ai cũng cần làm chủ.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <h3 class="time-title">Trạng thái hiện tại</h3>
+        <p class="time-desc">Giờ đây, tôi không còn là một người đứng ngoài quan sát nữa. Tôi đã có thể chủ động cộng tác với AI, tự tay thiết kế và cấu trúc một Portfolio số cá nhân, và quan trọng nhất là biết cách kiểm soát công cụ thay vì để công cụ chi phối bản thân.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reflection-section" id="nang-luc">
+    <h2 class="section-title reveal">Năng lực số đã tích lũy</h2>
+    <div class="grid-2">
+      <div class="skill-card reveal">
+        <span class="card-icon">🧠</span>
+        <h3 class="card-title">Kỹ nghệ Prompt (Prompt Engineering)</h3>
+        <p class="card-desc">Hiểu sâu sắc các kỹ thuật tư duy như Few-shot, Chain-of-Thought để làm việc hiệu quả với các mô hình ngôn ngữ lớn (LLM), biến AI thành trợ lý đắc lực giải quyết bài toán phức tạp.</p>
+      </div>
+      <div class="skill-card reveal">
+        <span class="card-icon">💻</span>
+        <h3 class="card-title">Xây dựng & Quản lý Portfolio Số</h3>
+        <p class="card-desc">Nắm vững cách tổ chức thông tin học tập một cách khoa học, tiếp cận các ngôn ngữ giao diện web để hiện thực hóa tư duy thẩm mỹ và nội dung lên không gian số số hóa.</p>
+      </div>
+      <div class="skill-card reveal">
+        <span class="card-icon">🤝</span>
+        <h3 class="card-title">Cộng tác Nhóm trong Môi trường Số</h3>
+        <p class="card-desc">Vận dụng các công cụ lưu trữ đám mây, ứng dụng AI vào quy trình phân chia kịch bản, làm slide và dựng video sáng tạo một cách mượt mà cùng các thành viên nhóm.</p>
+      </div>
+      <div class="skill-card reveal">
+        <span class="card-icon">🛡️</span>
+        <h3 class="card-title">Liêm chính Học thuật Thời đại AI</h3>
+        <p class="card-desc">Xây dựng bộ nguyên tắc ứng xử đạo đức rõ ràng với AI. Thấu hiểu ranh giới giữa "tham khảo thông minh" và "đạo văn", luôn biên tập và kiểm định lại 100% kết quả đầu ra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reflection-section" id="thach-thuc">
+    <h2 class="section-title reveal">Thách thức & Giải pháp</h2>
+    <div class="grid-2">
+      <div class="challenge-card reveal">
+        <span class="card-icon">⚠️</span>
+        <h3 class="card-title">Thách thức: Quá tải thông tin & "Ảo tưởng AI"</h3>
+        <p class="card-desc">Thời gian đầu, lượng công cụ AI xuất hiện quá nhiều dễ gây ngợp. Đồng thời, hiện tượng AI sinh thông tin sai lệch (Hallucination) đôi khi khiến dữ liệu bài làm thiếu chính xác nếu quá phụ thuộc.</p>
+      </div>
+      <div class="challenge-card reveal">
+        <span class="card-icon">🎯</span>
+        <h3 class="card-title">Cách vượt qua: Tư duy phản biện</h3>
+        <p class="card-desc">Tôi học cách luôn hoài nghi lành mạnh đối với mọi câu trả lời của máy móc. Áp dụng công thức kiểm tra chéo nguồn dữ liệu từ giáo trình chính thống và luôn bổ sung góc nhìn cá nhân vào sản phẩm cuối cùng.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-block reveal">
+    <div class="quote-text">"Trí tuệ nhân tạo không thay thế con người, nhưng những người biết sử dụng AI một cách thông minh và có đạo đức sẽ thay thế những người không biết."</div>
+    <div class="quote-author">— Bài học tâm đắc từ học kỳ Công nghệ số & AI</div>
+  </div>
+
+  <section class="reflection-section" id="tuong-lai">
+    <h2 class="section-title reveal">Định hướng tương lai</h2>
+    <ul class="future-list">
+      <li class="reveal">
+        <div class="future-num">01</div>
+        <div class="future-content">
+          <h4>Ứng dụng liên tục vào chuyên ngành</h4>
+          <p>Tiếp tục duy trì thói quen sử dụng AI như một người bạn phản biện tư duy, hỗ trợ nghiên cứu tài liệu và tối ưu hóa hiệu suất học tập các môn học chuyên sâu tiếp theo tại ĐHQGHN.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="future-num">02</div>
+        <div class="future-content">
+          <h4>Nâng cấp liên tục không gian số cá nhân</h4>
+          <p>Không chỉ dừng lại ở bài tập môn học, tôi dự định biến trang Portfolio này thành một trang blog kỹ thuật số lâu dài, nơi lưu trữ các dự án cá nhân và ghi dấu sự trưởng thành của bản thân.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="future-num">03</div>
+        <div class="future-content">
+          <h4>Lan tỏa tinh thần liêm chính công nghệ</h4>
+          <p>Chia sẻ những gì đã học — từ cách viết prompt hiệu quả đến sử dụng công cụ số — với bạn bè và những sinh viên khóa sau, xây dựng văn hóa học tập có trách nhiệm với AI.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <div class="nav-buttons reveal">
+    <a href="projects.html" class="btn-outline">← Quay lại Dự án</a>
+    <a href="index.html" class="btn-primary">Về Trang chủ 🏠</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Portfolio Số</div>
+  <p class="footer-text">
+    Lê Quang Phúc · Nhập Môn Công Nghệ Số & AI<br>
+    Đại Học Công Nghệ - ĐHQGHN · Học kỳ 2 · 2025–2026
+  </p>
+  <div class="footer-links">
+    <a href="index.html#hero">Trang chủ</a>
+    <a href="index.html#chapters">Bài giảng</a>
+    <a href="projects.html">Dự án</a>
+    <a href="reflection.html" >Tổng kết</a>
+  </div>
+</footer>
+
+<script src="portfolio.js"></script>
+
+<script>
+const revealEls = document.querySelectorAll('.timeline-item, .skill-card, .challenge-card, .quote-block, .future-list li, .nav-buttons');
+revealEls.forEach(el => el.classList.add('reveal'));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealEls.forEach(el => observer.observe(el));
+</script>
+
+<script>
+// Smooth scroll cho sub-nav
+document.querySelectorAll('.sub-nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const offset = 92;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      document.querySelectorAll('.sub-nav a').forEach(item => item.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
+// Scroll-spy: cập nhật active theo vị trí cuộn
+window.addEventListener('scroll', () => {
+  const sections = ['hanh-trinh', 'nang-luc', 'thach-thuc', 'tuong-lai'];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const link = document.querySelector(`.sub-nav a[href="#${id}"]`);
+    if (link) {
+      if (rect.top <= 140 && rect.bottom > 140) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    }
+  });
+});
+
+// === SỬA LỖI NÚT LÊN ĐẦU TRANG HIỆN RA SỚM HƠN (NGƯỠNG 150px) ===
+window.addEventListener('scroll', () => {
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (backToTopBtn) {
+    if (window.scrollY > 150) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  }
+});
+</script>
+
+
+<script>
+// Tự động gán active class cho navbar dựa trên URL
+const path = window.location.pathname;
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && !href.startsWith('#') && path.includes(href)) {
+    link.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>

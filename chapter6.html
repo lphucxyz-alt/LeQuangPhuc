@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bài Giảng 6 · An Toàn & Liêm Chính Học Thuật</title>
+<meta name="description" content="Bài giảng 6 — An toàn thông tin mạng, dấu chân kỹ thuật số và các nguyên tắc bảo vệ liêm chính học thuật.">
+<meta property="og:url" content="">
+<meta property="og:image" content="./cover.jpg">
+<script>(function(){var manual=localStorage.getItem("portfolio_theme_manual")==="1";var saved=localStorage.getItem("portfolio_theme");var h=new Date().getHours();var auto=(h>=6&&h<18)?"light":"dark";var t=manual&&saved?saved:auto;if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== SUB-NAV SCROLL-SPY ===== */
+.sub-nav { position: sticky; top: 68px; left: 0; right: 0; background: var(--bg-nav); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 90; display: flex; justify-content: center; gap: 8px; padding: 10px 24px; overflow-x: auto; white-space: nowrap; }
+.sub-nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 20px; transition: all 0.2s; }
+.sub-nav a:hover, .sub-nav a.active { color: var(--accent); background: var(--bg-card-hover); }
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb { position: relative; z-index: 1; padding: 48px 48px 0; display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: var(--text-muted); }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { opacity: 0.5; }
+
+/* ===== TASK HERO ===== */
+.task-hero { position: relative; z-index: 1; padding: 30px 48px 60px; max-width: 900px; }
+.task-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.task-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--accent); }
+.task-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.15; margin-bottom: 24px; color: var(--text-main); }
+.task-hero h1 em { font-style: normal; color: var(--accent); position: relative; }
+.task-hero h1 em::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 8px; background: var(--accent); opacity: 0.2; border-radius: 4px; z-index: -1; }
+.task-hero-desc { font-size: 17px; line-height: 1.8; color: var(--text-muted); max-width: 650px; margin-bottom: 36px; }
+.meta-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.meta-pill { display: flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 100px; padding: 8px 18px; font-size: 13px; color: var(--text-muted); backdrop-filter: blur(8px); transition: border-color 0.3s; }
+.meta-pill:hover { border-color: var(--accent); }
+.meta-pill strong { color: var(--text-main); font-weight: 600; }
+
+/* ===== SECTIONS ===== */
+section { position: relative; z-index: 1; padding: 80px 48px; }
+.section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 700; margin-bottom: 16px; color: var(--text-main); }
+.section-sub { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 640px; }
+
+/* ===== OVERVIEW GRID ===== */
+.overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 48px; }
+.ov-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 32px 24px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+.ov-card:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-4px); box-shadow: var(--glow); }
+.ov-icon { font-size: 32px; margin-bottom: 16px; display: inline-block; }
+.ov-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
+.ov-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text-main); }
+.ov-sub { font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+/* ===== CONTENT CARDS ===== */
+.content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 32px; }
+.content-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 28px; transition: all 0.3s; }
+.content-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--glow); }
+.content-card-icon { font-size: 28px; margin-bottom: 14px; }
+.content-card-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 10px; }
+.content-card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+/* ===== DEFINITION BOX ===== */
+.def-box { background: var(--bg-card); border: 1px solid var(--border-color); border-left: 4px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 28px 32px; margin: 24px 0; }
+.def-box-term { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.def-box-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; }
+.def-box-text strong { color: var(--text-main); }
+
+/* ===== HIERARCHY DIAGRAM ===== */
+.hierarchy { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; max-width: 640px; }
+.hier-row { display: flex; align-items: center; gap: 16px; }
+.hier-indent { width: 32px; height: 2px; background: var(--border-color); flex-shrink: 0; }
+.hier-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 18px; font-size: 14px; color: var(--text-muted); flex: 1; transition: 0.3s; }
+.hier-badge:hover { border-color: var(--accent); color: var(--text-main); }
+.hier-badge.root { background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(200,80,192,0.1)); border-color: rgba(255,107,107,0.4); color: var(--text-main); font-weight: 600; }
+.hier-badge .badge-icon { font-size: 18px; }
+
+/* ===== REFLECTION BOX ===== */
+.reflection-box { background: var(--bg-card); border-left: 4px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 40px; margin-top: 40px; backdrop-filter: blur(8px); }
+.reflection-box p { font-size: 16px; color: var(--text-muted); line-height: 1.8; }
+.reflection-box p + p { margin-top: 20px; }
+.reflection-box strong { color: var(--text-main); font-weight: 600; }
+
+/* ===== NAV BUTTONS ===== */
+.nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 64px 48px; gap: 16px; position: relative; z-index: 1; flex-wrap: wrap; }
+.btn-primary { padding: 16px 36px; border-radius: 100px; background: var(--accent); color: var(--btn-text); font-weight: 600; font-size: 15px; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(79, 195, 247, 0.2); }
+.btn-primary:hover { background: var(--accent-alt); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(124, 131, 245, 0.4); }
+.btn-outline { padding: 16px 36px; border-radius: 100px; border: 1px solid var(--border-color); color: var(--text-main); font-size: 15px; font-weight: 600; text-decoration: none; background: transparent; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-card); transform: translateY(-2px); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .breadcrumb, .task-hero, section, .nav-buttons { padding-left: 24px; padding-right: 24px; }
+  .task-hero h1 { font-size: 36px; }
+  .sub-nav { top: 68px; padding: 8px 16px; justify-content: flex-start; }
+}
+</style>
+  <link rel="apple-touch-icon" href="https://lequangphuc.github.io/portfolio/cover.jpg">
+</head>
+<body>
+
+<div id="intro-screen">
+  <script>if(sessionStorage.getItem("portfolio_intro_seen")) document.getElementById("intro-screen").style.display = "none";</script>
+  <div class="intro-logo">Portfolio<span>.dev</span></div>
+  <div class="intro-tagline">Nhập Môn Công Nghệ Số &amp; AI</div>
+  <div class="intro-bar-wrap"><div class="intro-bar"></div></div>
+</div>
+
+<div id="cursor-dot"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">Portfolio Số</a>
+  <div class="nav-links">
+    <a href="index.html">Trang chủ</a>
+    <a href="index.html#about">Về tôi</a>
+    <a href="index.html#chapters" class="active">Bài giảng</a>
+    <a href="index.html#tasks">Nhiệm vụ</a>
+    <a href="projects.html">Dự án</a>
+    <a href="reflection.html">Tổng kết</a>
+  </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Chuyển đổi giao diện">☀️</button>
+  <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+</nav>
+
+<!-- SUB-NAV (scroll-spy) -->
+<div class="sub-nav">
+  <a href="#overview">Tổng quan</a>
+  <a href="#cybersecurity">An ninh mạng</a>
+  <a href="#digital-footprint">Dấu chân số</a>
+  <a href="#academic">Liêm chính học thuật</a>
+  <a href="#reflection">Nhận xét</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb reveal">
+  <a href="index.html">Portfolio</a>
+  <span>/</span>
+  <a href="index.html#chapters" class="active">Bài giảng</a>
+  <span>/</span>
+  Bài giảng 6
+</div>
+
+<!-- HERO -->
+<div class="task-hero">
+  <div class="task-eyebrow reveal">Bài Giảng 6 · Chương 6 · Safety & Integrity</div>
+  <h1 class="reveal">An Toàn & Liêm Chính<br><em>Học Thuật</em></h1>
+  <p class="task-hero-desc reveal">
+    Tự bảo vệ bản thân trước các mối đe dọa không gian mạng và giữ vững đạo đức học thuật trong thời đại bùng nổ của trí tuệ nhân tạo tạo sinh.
+  </p>
+  <div class="meta-pills reveal">
+    <div class="meta-pill">📅 <strong>Chương 6 · Tuần 11–12</strong></div>
+    <div class="meta-pill">🛡️ <strong>Cyber Security</strong></div>
+    <div class="meta-pill">⚖️ <strong>Academic Integrity</strong></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION: TỔNG QUAN -->
+<section id="overview">
+  <div class="section-label reveal">Tổng quan chương học</div>
+  <h2 class="section-title reveal">Bảo vệ bản thân và Đạo đức nghề nghiệp</h2>
+  <p class="section-sub reveal">
+    Bên cạnh kỹ năng chuyên môn, kỹ năng tự bảo vệ dữ liệu và ý thức tôn trọng chất xám là những phẩm chất bắt buộc của một sinh viên Kỹ thuật.
+  </p>
+  <div class="overview-grid">
+    <div class="ov-card reveal">
+      <div class="ov-icon">🛡️</div>
+      <div class="ov-label">An ninh</div>
+      <div class="ov-val">Bảo mật dữ liệu</div>
+      <div class="ov-sub">Chống lừa đảo (Phishing), Malware và bảo vệ mật khẩu (2FA).</div>
+    </div>
+    <div class="ov-card reveal">
+      <div class="ov-icon">👣</div>
+      <div class="ov-label">Dấu chân</div>
+      <div class="ov-val">Digital Footprint</div>
+      <div class="ov-sub">Quản lý những gì bạn để lại trên không gian mạng và danh tiếng số.</div>
+    </div>
+    <div class="ov-card reveal">
+      <div class="ov-icon">🚫</div>
+      <div class="ov-label">Đạo văn</div>
+      <div class="ov-val">Plagiarism</div>
+      <div class="ov-sub">Các hình thức đạo văn, từ chép nguyên văn đến đạo ý tưởng.</div>
+    </div>
+    <div class="ov-card reveal">
+      <div class="ov-icon">🤖</div>
+      <div class="ov-label">Quy định AI</div>
+      <div class="ov-val">AI trong học thuật</div>
+      <div class="ov-sub">Khai báo việc sử dụng AI (ChatGPT) đúng quy định của trường học.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: AN NINH MẠNG -->
+<section id="cybersecurity">
+  <div class="section-label reveal">Phòng vệ chủ động</div>
+  <h2 class="section-title reveal">Mối đe dọa không gian mạng</h2>
+  <p class="section-sub reveal">
+    Nhận diện các hình thức tấn công phổ biến để bảo vệ tài khoản sinh viên và dữ liệu cá nhân.
+  </p>
+
+  <div class="hierarchy reveal" style="margin-top: 40px;">
+    <div class="hier-row">
+      <div class="hier-badge root">
+        <span class="badge-icon">⚠️</span>
+        <span>Các nguy cơ bảo mật thường gặp (Cyber Threats)</span>
+      </div>
+    </div>
+    <div class="hier-row">
+      <div class="hier-indent"></div>
+      <div class="hier-badge">
+        <span class="badge-icon">🎣</span>
+        <span><b>Phishing (Lừa đảo)</b> — Giả mạo email/website ngân hàng, trường học để đánh cắp mật khẩu.</span>
+      </div>
+    </div>
+    <div class="hier-row">
+      <div class="hier-indent"></div>
+      <div class="hier-badge">
+        <span class="badge-icon">🐛</span>
+        <span><b>Malware (Mã độc)</b> — Virus, Trojan, Ransomware (mã hóa tống tiền) lây nhiễm qua file đính kèm.</span>
+      </div>
+    </div>
+    <div class="hier-row">
+      <div class="hier-indent"></div>
+      <div class="hier-badge">
+        <span class="badge-icon">🔓</span>
+        <span><b>Social Engineering</b> — Thao túng tâm lý để nạn nhân tự nguyện giao nộp thông tin mật.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="def-box reveal" style="margin-top: 40px;">
+    <div class="def-box-term">Giải pháp phòng ngừa: Xác thực hai yếu tố (2FA)</div>
+    <div class="def-box-text">
+      Luôn bật <strong>2FA (Two-Factor Authentication)</strong> cho các tài khoản quan trọng (Email, VNU LMS, Mạng xã hội). Ngay cả khi hacker biết mật khẩu của bạn, chúng vẫn không thể đăng nhập nếu không có mã xác thực gửi về điện thoại hoặc ứng dụng Authenticator.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: DIGITAL FOOTPRINT -->
+<section id="digital-footprint">
+  <div class="section-label reveal">Danh tiếng cá nhân</div>
+  <h2 class="section-title reveal">Dấu Chân Kỹ Thuật Số (Digital Footprint)</h2>
+  <p class="section-sub reveal">
+    Internet không bao giờ quên. Mọi lượt like, bình luận, bức ảnh bạn đăng tải đều đóng góp vào "dấu chân số" của bạn.
+  </p>
+
+  <div class="content-grid">
+    <div class="content-card reveal">
+      <div class="content-card-icon">👣</div>
+      <div class="content-card-title">Dấu chân số chủ động</div>
+      <div class="content-card-desc">Những gì bạn cố ý chia sẻ: Bài đăng Facebook, hồ sơ LinkedIn, video trên YouTube, email đã gửi.</div>
+    </div>
+    <div class="content-card reveal">
+      <div class="content-card-icon">🕵️</div>
+      <div class="content-card-title">Dấu chân số bị động</div>
+      <div class="content-card-desc">Những gì bị thu thập ngầm: Lịch sử tìm kiếm Google, vị trí địa lý, địa chỉ IP, cookies duyệt web.</div>
+    </div>
+    <div class="content-card reveal">
+      <div class="content-card-icon">💼</div>
+      <div class="content-card-title">Tác động đến sự nghiệp</div>
+      <div class="content-card-desc">Nhà tuyển dụng (HR) thường xuyên tra cứu ứng viên trên mạng xã hội trước khi phỏng vấn. Một bình luận thiếu suy nghĩ có thể làm mất cơ hội việc làm.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: LIÊM CHÍNH HỌC THUẬT -->
+<section id="academic">
+  <div class="section-label reveal">Quy tắc tối thượng</div>
+  <h2 class="section-title reveal">Liêm Chính Học Thuật (Academic Integrity)</h2>
+  <p class="section-sub reveal">
+    Sự trung thực trong nghiên cứu và học tập là nền tảng của giáo dục đại học. Đạo văn (Plagiarism) là vi phạm nghiêm trọng nhất.
+  </p>
+
+  <table class="compare-table reveal">
+    <thead>
+      <tr>
+        <th>Hình thức Đạo văn</th>
+        <th>Ví dụ thực tế</th>
+        <th>Cách phòng tránh</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="highlight-col">Copy-Paste (Sao chép nguyên văn)</td>
+        <td>Bôi đen 1 đoạn trên Wikipedia dán thẳng vào tiểu luận mà không để trong ngoặc kép.</td>
+        <td>Dùng ngoặc kép "..." và trích dẫn nguồn rõ ràng (APA, IEEE).</td>
+      </tr>
+      <tr>
+        <td class="highlight-col">Đạo ý tưởng (Paraphrasing Plagiarism)</td>
+        <td>Viết lại câu chữ của tác giả khác theo ý mình nhưng không ghi nguồn.</td>
+        <td>Ngay cả khi viết lại (paraphrase) bằng ngôn từ của mình, vẫn PHẢI trích dẫn nguồn.</td>
+      </tr>
+      <tr>
+        <td class="highlight-col">Đạo văn tự thân (Self-Plagiarism)</td>
+        <td>Nộp lại bài tập cũ của mình cho một môn học mới mà không xin phép giảng viên.</td>
+        <td>Hỏi ý kiến giảng viên nếu muốn sử dụng lại dữ liệu nghiên cứu cũ.</td>
+      </tr>
+      <tr>
+        <td class="highlight-col">Sử dụng AI sai quy định (AI Plagiarism)</td>
+        <td>Dùng ChatGPT viết hộ 100% bài luận và tự nhận đó là bài mình viết.</td>
+        <td>Chỉ dùng AI để tìm ý tưởng (brainstorming), hoặc nếu dùng, phải khai báo rõ ràng ở mục tài liệu tham khảo theo quy định.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION: NHẬN XÉT -->
+<section id="reflection">
+  <div class="section-label reveal">Góc nhìn cá nhân</div>
+  <h2 class="section-title reveal">Ranh giới mỏng manh giữa Tham khảo và Đạo văn</h2>
+  <div class="reflection-box reveal">
+    <p>
+      Với các môn lập trình tại trường Công nghệ, việc tham khảo mã nguồn trên StackOverflow hay GitHub là điều hiển nhiên. Tuy nhiên, ranh giới giữa <strong>tham khảo để hiểu thuật toán</strong> và <strong>copy-paste mù quáng</strong> là rất mỏng manh. 
+    </p>
+    <p>
+      Hiện nay, việc copy code có sẵn mà không hiểu bản chất, hay lạm dụng Copilot viết bài tập sẽ khiến tư duy logic thui chột. Hơn nữa, các phần mềm quét đạo văn bằng AI (như Turnitin) ngày càng thông minh. Liêm chính học thuật không chỉ là để không bị đuổi học, mà là để <strong>thực sự sở hữu kiến thức mình được dạy</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <a href="chapter5.html" class="btn-outline">← Chương trước</a>
+  <a href="chapter7.html" class="btn-primary">Chương tiếp theo →</a>
+</div>
+
+<footer>
+  <div class="footer-brand">Portfolio Số</div>
+  <p class="footer-text">
+    Lê Quang Phúc · Nhập Môn Công Nghệ Số & AI<br>
+    Đại Học Công Nghệ - ĐHQGHN · Học kỳ 2 · 2025–2026
+  </p>
+</footer>
+
+<script src="portfolio.js"></script>
+<script>
+// ===== SUB-NAV SCROLL-SPY =====
+const subNavSections = ['overview', 'cybersecurity', 'digital-footprint', 'academic', 'reflection'];
+window.addEventListener('scroll', () => {
+  if (typeof isSubNavClicking !== 'undefined' && isSubNavClicking) return;
+  subNavSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const link = document.querySelector(`.sub-nav a[href="#${id}"]`);
+    if (link) {
+      if (rect.top <= 140 && rect.bottom > 140) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    }
+  });
+}, { passive: true });
+
+// ===== SMOOTH SCROLL cho sub-nav =====
+let isSubNavClicking = false;
+document.querySelectorAll('.sub-nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        isSubNavClicking = true;
+        const offset = 92; // navbar + sub-nav height
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+        setTimeout(() => isSubNavClicking = false, 800);
+      }
+      document.querySelectorAll('.sub-nav a').forEach(item => item.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>

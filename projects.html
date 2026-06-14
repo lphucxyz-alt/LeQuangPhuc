@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dự Án Giữa Kỳ | Portfolio Kỹ Thuật Số</title>
+<meta name="description" content="Dự án giữa kỳ nhóm 3 — Ứng dụng AI vào lập trình. Nhập Môn Công Nghệ Số & AI, Đại Học Công Nghệ - ĐHQGHN.">
+<meta property="og:title" content="Dự Án Giữa Kỳ — Ứng dụng AI vào lập trình | Portfolio Lê Quang Phúc">
+<meta property="og:description" content="Video dự án nhóm khám phá sức mạnh và ứng dụng của Generative AI trong lĩnh vực Kỹ thuật - Công nghệ.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="">
+<meta property="og:image" content="./cover.jpg">
+<meta name="theme-color" content="#0a0f2e">
+<script>(function(){var manual=localStorage.getItem("portfolio_theme_manual")==="1";var saved=localStorage.getItem("portfolio_theme");var h=new Date().getHours();var auto=(h>=6&&h<18)?"light":"dark";var t=manual&&saved?saved:auto;if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== CSS RIÊNG CHO TRANG PROJECTS ===== */
+/* Video thumbnail (thay iframe để tránh lỗi file://) */
+.video-thumb-link { display: block; text-decoration: none; margin-bottom: 12px; }
+.video-thumb-wrap {
+  position: relative; border-radius: var(--r); overflow: hidden;
+  border: 1px solid var(--border-color); cursor: pointer;
+}
+.video-thumb-img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; transition: transform 0.4s ease; }
+.video-thumb-link:hover .video-thumb-img { transform: scale(1.03); }
+.video-play-btn {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(255,0,0,0.85); color: #fff;
+  font-size: 28px; display: flex; align-items: center; justify-content: center;
+  padding-left: 5px; transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.video-thumb-link:hover .video-play-btn { transform: translate(-50%, -50%) scale(1.1); background: rgba(255,0,0,1); }
+
+.project-container {
+  max-width: 1000px; margin: 0 auto;
+  padding: 140px 48px 80px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  position: relative; z-index: 1; margin-bottom: 40px;
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  letter-spacing: 0.06em; color: var(--text-muted);
+}
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { opacity: 0.5; }
+
+/* Header */
+.project-eyebrow {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase;
+  margin-bottom: 20px; display: flex; align-items: center; gap: 12px;
+}
+.project-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--accent); }
+.project-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.15;
+  margin-bottom: 20px; color: var(--text-main);
+}
+.project-header h1 em {
+  font-style: normal; color: var(--accent); position: relative;
+}
+.project-header h1 em::after {
+  content: ''; position: absolute; bottom: 4px; left: 0;
+  width: 100%; height: 8px; background: var(--accent);
+  opacity: 0.2; border-radius: 4px; z-index: -1;
+}
+.project-header p {
+  font-size: 17px; line-height: 1.8; color: var(--text-muted); max-width: 650px; margin-bottom: 36px;
+}
+
+/* Meta pills */
+.meta-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+.meta-pill {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  border-radius: 100px; padding: 8px 18px; font-size: 13px; color: var(--text-muted);
+  backdrop-filter: blur(8px); transition: border-color 0.3s;
+}
+.meta-pill:hover { border-color: var(--accent); }
+.meta-pill strong { color: var(--text-main); font-weight: 600; }
+
+/* Video embed */
+.video-wrap {
+  border-radius: var(--r); overflow: hidden;
+  border: 1px solid var(--border-color); margin-bottom: 12px;
+  position: relative; background: #000;
+}
+.video-wrap iframe {
+  width: 100%; aspect-ratio: 16/9; display: block; border: none;
+}
+.video-caption {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  color: var(--text-muted); text-align: center; margin-bottom: 48px;
+}
+.video-caption a { color: var(--accent); text-decoration: none; }
+.video-caption a:hover { text-decoration: underline; }
+
+/* Steps quy trình */
+.process-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px; margin-bottom: 48px;
+}
+.process-step {
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  border-radius: var(--r); padding: 24px; transition: all 0.3s;
+}
+.process-step:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--glow); }
+.step-num-badge {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+  color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 10px; display: block;
+}
+.step-title-text { font-size: 15px; font-weight: 600; color: var(--text-main); margin-bottom: 8px; }
+.step-desc-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* Sections */
+.project-section { margin-bottom: 64px; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700; margin-bottom: 16px; color: var(--text-main);
+}
+.section-body { font-size: 15px; color: var(--text-muted); line-height: 1.8; }
+
+/* Team */
+.team-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px; margin-top: 32px;
+}
+.team-card {
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  border-radius: var(--r); padding: 24px; text-align: center; transition: all 0.3s;
+}
+.team-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--glow); }
+.team-avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--accent); margin: 0 auto 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+  color: var(--btn-text); flex-shrink: 0;
+}
+.team-avatar.alt { background: var(--accent-alt); }
+.team-role-badge {
+  display: inline-block; font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 100px;
+  background: rgba(79,195,247,0.1); color: var(--accent);
+  border: 1px solid rgba(79,195,247,0.25); margin-bottom: 10px;
+}
+[data-theme="light"] .team-role-badge {
+  background: rgba(217,119,6,0.1); border-color: rgba(217,119,6,0.25);
+}
+.team-name { font-size: 14px; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
+.team-duty { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+/* Timeline nhật ký */
+.timeline { display: flex; flex-direction: column; gap: 0; margin-top: 32px; padding-left: 20px; position: relative; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 12px; bottom: 12px;
+  width: 2px; background: var(--border-color);
+}
+.tl-item { position: relative; padding-bottom: 36px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute; left: -27px; top: 6px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg-main); border: 2px solid var(--accent);
+  transition: background 0.3s;
+}
+.tl-item:hover .tl-dot { background: var(--accent); }
+.tl-date {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--accent); letter-spacing: 0.08em; margin-bottom: 6px;
+}
+.tl-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 8px; }
+.tl-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+/* Tools */
+.tool-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.tool-pill {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  border-radius: 100px; padding: 8px 18px; font-size: 14px; color: var(--text-muted);
+  transition: all 0.2s;
+}
+.tool-pill:hover { border-color: var(--accent); color: var(--text-main); transform: translateY(-2px); }
+
+/* Highlight note */
+.highlight-note {
+  background: linear-gradient(135deg, rgba(79,195,247,0.06), rgba(124,131,245,0.06));
+  border: 1px solid rgba(79,195,247,0.25); border-radius: var(--r);
+  padding: 24px 28px; margin-top: 24px; font-size: 15px;
+  color: var(--text-muted); line-height: 1.8;
+}
+[data-theme="light"] .highlight-note {
+  background: linear-gradient(135deg, rgba(217,119,6,0.05), rgba(180,83,9,0.03));
+  border-color: rgba(217,119,6,0.2);
+}
+.highlight-note strong { color: var(--text-main); }
+
+/* Nav buttons */
+.nav-buttons {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; flex-wrap: wrap; padding-top: 48px;
+  border-top: 1px solid var(--border-color); margin-top: 24px;
+}
+.btn-primary {
+  padding: 14px 32px; border-radius: 100px; background: var(--accent);
+  color: var(--btn-text); font-weight: 600; font-size: 15px;
+  text-decoration: none; border: none; cursor: pointer; transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--accent-alt); transform: translateY(-2px); }
+.btn-outline {
+  padding: 14px 32px; border-radius: 100px; border: 1px solid var(--border-color);
+  color: var(--text-main); font-size: 15px; font-weight: 500;
+  text-decoration: none; background: transparent; cursor: pointer; transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-card); transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  .project-container { padding: 100px 24px 60px; }
+  .nav-buttons { flex-direction: column; align-items: stretch; }
+  .nav-buttons a { text-align: center; justify-content: center; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+  <link rel="apple-touch-icon" href="https://lequangphuc.github.io/portfolio/cover.jpg">
+</head>
+<body>
+<div id="intro-screen">
+  <script>if(sessionStorage.getItem("portfolio_intro_seen")) document.getElementById("intro-screen").style.display = "none";</script>
+  <div class="intro-logo">Portfolio<span>.dev</span></div>
+  <div class="intro-tagline">Nhập Môn Công Nghệ Số &amp; AI</div>
+  <div class="intro-bar-wrap"><div class="intro-bar"></div></div>
+</div>
+
+<div id="cursor-dot"></div>
+<canvas id="particles-canvas"></canvas>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">Portfolio Số</a>
+  <div class="nav-links">
+    <a href="index.html">Trang chủ</a>
+    <a href="index.html#about">Về tôi</a>
+    <a href="index.html#chapters">Bài giảng</a>
+    <a href="index.html#tasks">Nhiệm vụ</a>
+    <a href="projects.html" class="active">Dự án</a>
+    <a href="reflection.html">Tổng kết</a>
+  </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Chuyển đổi giao diện">☀️</button>
+  <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+</nav>
+
+<div class="sub-nav">
+  <a href="#tong-quan">1. Tổng quan</a>
+  <a href="#phan-cong">2. Phân công</a>
+  <a href="#nhat-ky">3. Nhật ký</a>
+  <a href="#ung-dung">4. Ứng dụng AI</a>
+</div>
+
+<div class="project-container">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb reveal">
+    <a href="index.html">Portfolio</a>
+    <span>/</span>
+    Dự án giữa kỳ
+  </div>
+
+  <!-- Header -->
+  <div class="project-header">
+    <div class="project-eyebrow reveal">Bài tập nhóm giữa kỳ</div>
+    <h1 class="reveal">Ứng dụng <em>AI</em> vào lập trình</h1>
+    <p class="reveal">Môn học Nhập môn Công nghệ số & AI</p>
+    <div class="meta-pills reveal">
+      <div class="meta-pill">👥 Nhóm thực hiện: <strong>Nhóm 3</strong></div>
+      <div class="meta-pill">👤 Vai trò cá nhân: <strong>Trưởng nhóm (Lê Quang Phúc)</strong></div>
+      <div class="meta-pill">✅ Trạng thái: <strong>Đã hoàn thành</strong></div>
+    </div>
+  </div>
+
+  <div class="divider" style="margin: 0 0 40px;"></div>
+
+  <!-- Video -->
+  <div class="reveal">
+    <a href="https://www.youtube.com/watch?v=DxYVQg3Xm84" target="_blank" rel="noopener" class="video-thumb-link">
+      <div class="video-thumb-wrap">
+        <img
+          src="https://img.youtube.com/vi/DxYVQg3Xm84/maxresdefault.jpg"
+          alt="Thumbnail video dự án"
+          class="video-thumb-img"
+        />
+        <div class="video-play-btn">▶</div>
+      </div>
+    </a>
+    <div class="video-caption">
+      📹 Video dự án giữa kỳ &nbsp;·&nbsp;
+      <a href="https://www.youtube.com/watch?v=DxYVQg3Xm84" target="_blank" rel="noopener">Xem trên YouTube ↗</a>
+    </div>
+  </div>
+
+  <!-- Quy trình 4 bước -->
+  <div class="process-steps reveal">
+    <div class="process-step">
+      <span class="step-num-badge">Bước 1</span>
+      <div class="step-title-text">Phân công & Lên ý tưởng</div>
+      <div class="step-desc-text">Phân vai trò (Nhóm trưởng, Thư ký, Edit) dựa trên thế mạnh từng thành viên.</div>
+    </div>
+    <div class="process-step">
+      <span class="step-num-badge">Bước 2</span>
+      <div class="step-title-text">Xây dựng Slide</div>
+      <div class="step-desc-text">Thiết kế nội dung, chuẩn hóa format và thống nhất bố cục với AI hỗ trợ.</div>
+    </div>
+    <div class="process-step">
+      <span class="step-num-badge">Bước 3</span>
+      <div class="step-title-text">Luyện tập & Quay phim</div>
+      <div class="step-desc-text">Luyện thuyết trình và quay dựng thô nhiều lần để đạt chất lượng tốt nhất.</div>
+    </div>
+    <div class="process-step">
+      <span class="step-num-badge">Bước 4</span>
+      <div class="step-title-text">Hậu kỳ Video</div>
+      <div class="step-desc-text">Cắt ghép, chèn hiệu ứng, lồng tiếng và hoàn thiện sản phẩm cuối.</div>
+    </div>
+  </div>
+
+  <div class="divider" style="margin: 0 0 48px;"></div>
+
+  <!-- Section 1: Tổng quan -->
+  <div class="project-section reveal" id="tong-quan">
+    <div class="section-label">1. Tổng quan dự án</div>
+    <h2 class="section-title">Ứng dụng AI vào lập trình</h2>
+    <p class="section-body">
+      Video dài khoảng 5–7 phút mang tên <strong style="color:var(--text-main)">"Ứng dụng AI vào lập trình"</strong> là sản phẩm giữa kỳ nhằm khám phá sức mạnh và thực trạng ứng dụng của Trí tuệ nhân tạo (Generative AI) trong lĩnh vực Kỹ thuật - Công nghệ. Dự án phân tích sâu về cách AI hỗ trợ, tối ưu hóa công việc lập trình, cũng như những giới hạn và thách thức đạo đức, bản quyền khi sử dụng chúng.
+    </p>
+  </div>
+
+  <!-- Section 2: Phân công -->
+  <div class="project-section reveal" id="phan-cong">
+    <div class="section-label">2. Phân công nhiệm vụ</div>
+    <h2 class="section-title">Thành viên Nhóm 3</h2>
+    <p class="section-body">Dự án được triển khai với sự phối hợp của 5 thành viên Nhóm 3. Việc phân công được tiến hành dựa trên điểm mạnh của từng cá nhân:</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">P</div>
+        <div class="team-role-badge">Trưởng nhóm</div>
+        <div class="team-name">Lê Quang Phúc</div>
+        <div class="team-duty">Điều phối, xây dựng ý tưởng, hỗ trợ chỉnh sửa video, thuyết trình.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar alt">Q</div>
+        <div class="team-role-badge">Thư ký</div>
+        <div class="team-name">Nguyễn Đức Quang</div>
+        <div class="team-duty">Tìm tài liệu, thiết kế slide, biên tập tổng thể nội dung, thuyết trình.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar alt">Q</div>
+        <div class="team-role-badge">Thành viên</div>
+        <div class="team-name">Vũ Minh Quang</div>
+        <div class="team-duty">Thiết kế slide, thêm hình ảnh minh họa, thuyết trình.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar alt">Q</div>
+        <div class="team-role-badge">Thành viên</div>
+        <div class="team-name">Phan Nhật Quân</div>
+        <div class="team-duty">Hoàn thiện format slide, kiểm tra lỗi đồng bộ, thuyết trình.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar alt">P</div>
+        <div class="team-role-badge">Thành viên</div>
+        <div class="team-name">Nguyễn Hữu Phong</div>
+        <div class="team-duty">Dựng & chỉnh sửa hậu kỳ video (cắt ghép, âm thanh), thuyết trình.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Nhật ký -->
+  <div class="project-section reveal" id="nhat-ky">
+    <div class="section-label">3. Nhật ký hoạt động</div>
+    <h2 class="section-title">Tiến trình thực hiện</h2>
+    <p class="section-body">Quá trình hình thành sản phẩm trải qua 4 giai đoạn chính, được quản lý tiến độ nghiêm ngặt để đảm bảo chất lượng video đầu ra:</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">18/04 – 19/04</div>
+        <div class="tl-title">Khởi động & Lên ý tưởng</div>
+        <div class="tl-desc">Họp thống nhất đề tài, phân công công việc theo năng lực. Xây dựng dàn ý và tìm kiếm tài liệu cơ bản.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">22/04 – 25/04</div>
+        <div class="tl-title">Thiết kế Slide & Kịch bản</div>
+        <div class="tl-desc">Ứng dụng AI tạo sinh để hỗ trợ tạo khung nội dung. Các thành viên phụ trách slide tiến hành thiết kế và biên tập nội dung trình chiếu.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">26/04 – 27/04</div>
+        <div class="tl-title">Luyện tập & Quay Video</div>
+        <div class="tl-desc">Tiến hành tập thuyết trình, chỉnh sửa ngôn ngữ hình thể. Phân vai và tiến hành quay thô nhiều lần để có source tốt nhất.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">28/04 – 30/04</div>
+        <div class="tl-title">Hậu kỳ & Hoàn thiện</div>
+        <div class="tl-desc">Xử lý cắt ghép video, lồng ghép slide, âm thanh và thêm hiệu ứng. Đánh giá sản phẩm chéo và nộp bài.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Ứng dụng AI -->
+  <div class="project-section reveal" id="ung-dung">
+    <div class="section-label">4. Ứng dụng Công cụ Số & AI</div>
+    <h2 class="section-title">Công nghệ đã sử dụng</h2>
+    <p class="section-body">Nhóm đã khai thác mạnh mẽ các công cụ AI để tiết kiệm thời gian, tuy nhiên luôn đề cao nguyên tắc <strong style="color:var(--text-main)">"biên tập lại 100% đầu ra"</strong> để đảm bảo liêm chính học thuật:</p>
+    <div class="tool-pills">
+      <div class="tool-pill">✨ Claude / Gemini <span style="font-size:12px;opacity:0.6">(Kịch bản, Tóm tắt)</span></div>
+      <div class="tool-pill">🎨 Gamma <span style="font-size:12px;opacity:0.6">(Khởi tạo Layout Slide)</span></div>
+      <div class="tool-pill">🖌️ Canva <span style="font-size:12px;opacity:0.6">(Thiết kế đồ họa)</span></div>
+      <div class="tool-pill">🎬 CapCut <span style="font-size:12px;opacity:0.6">(Hậu kỳ Video)</span></div>
+    </div>
+    <div class="highlight-note">
+      💡 <strong>Nguyên tắc liêm chính:</strong> Mọi nội dung do AI tạo ra đều được nhóm kiểm tra, biên tập và bổ sung góc nhìn cá nhân trước khi đưa vào sản phẩm cuối. AI đóng vai trò hỗ trợ, không thay thế tư duy của con người.
+    </div>
+  </div>
+
+  <!-- Nav buttons -->
+  <div class="nav-buttons reveal">
+    <a href="index.html" class="btn-outline">← Quay lại Trang chủ</a>
+    <a href="reflection.html" class="btn-primary">Xem tổng kết hành trình →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Portfolio Số</div>
+  <p class="footer-text">
+    Lê Quang Phúc · Nhập Môn Công Nghệ Số & AI<br>
+    Đại Học Công Nghệ - ĐHQGHN · Học kỳ 2 · 2025–2026
+  </p>
+  <div class="footer-links">
+    <a href="index.html#hero">Trang chủ</a>
+    <a href="index.html#chapters">Bài giảng</a>
+    <a href="projects.html">Dự án</a>
+    <a href="reflection.html">Tổng kết</a>
+  </div>
+</footer>
+
+<script src="portfolio.js"></script>
+<script>
+// Sub-nav scroll spy
+window.addEventListener('scroll', () => {
+  const sections = ['tong-quan', 'phan-cong', 'nhat-ky', 'ung-dung'];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const link = document.querySelector(`.sub-nav a[href="#${id}"]`);
+    if (link) {
+      if (rect.top <= 140 && rect.bottom > 140) link.classList.add('active');
+      else link.classList.remove('active');
+    }
+  });
+});
+
+// Smooth scroll cho sub-nav
+document.querySelectorAll('.sub-nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - (68 + 48);
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      document.querySelectorAll('.sub-nav a').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+</script>
+
+<script>
+// Tự động gán active class cho navbar dựa trên URL
+const path = window.location.pathname;
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && !href.startsWith('#') && path.includes(href)) {
+    link.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
