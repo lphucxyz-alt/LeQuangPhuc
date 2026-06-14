@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Nhiệm vụ 5: Ứng dụng AI tạo sinh (Generative AI) trong thiết kế đa phương tiện và viết kịch bản kỹ thuật.">
+<meta property="og:url" content="">
+<meta property="og:image" content="./cover.jpg">
+<title>Nhiệm Vụ 5 · Sáng Tạo Nội Dung Số</title>
+<script>(function(){var manual=localStorage.getItem("portfolio_theme_manual")==="1";var saved=localStorage.getItem("portfolio_theme");var h=new Date().getHours();var auto=(h>=6&&h<18)?"light":"dark";var t=manual&&saved?saved:auto;if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* CSS copied from other tasks, slightly adapted */
+.sub-nav { position: sticky; top: 68px; left: 0; right: 0; background: var(--bg-nav); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 90; display: flex; justify-content: center; gap: 8px; padding: 10px 24px; overflow-x: auto; white-space: nowrap; }
+.sub-nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 20px; transition: all 0.2s; }
+.sub-nav a:hover, .sub-nav a.active { color: var(--accent); background: var(--bg-card-hover); }
+.breadcrumb { position: relative; z-index: 1; padding: 48px 48px 0; display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: var(--text-muted); }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { opacity: 0.5; }
+.task-hero { position: relative; z-index: 1; padding: 30px 48px 60px; max-width: 900px; }
+.task-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.task-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.15; margin-bottom: 24px; color: var(--text-main); }
+.task-hero h1 em { font-style: normal; color: var(--accent); position: relative; }
+.task-hero-desc { font-size: 17px; line-height: 1.8; color: var(--text-muted); max-width: 650px; margin-bottom: 36px; }
+.meta-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.meta-pill { display: flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 100px; padding: 8px 18px; font-size: 13px; color: var(--text-muted); backdrop-filter: blur(8px); transition: border-color 0.3s; }
+.meta-pill strong { color: var(--text-main); font-weight: 600; }
+section { position: relative; z-index: 1; padding: 80px 48px; }
+.section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 700; margin-bottom: 16px; color: var(--text-main); }
+.section-sub { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 640px; }
+
+/* Grid for tools */
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.tool-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); padding: 32px; transition: all 0.3s; }
+.tool-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--glow); }
+.tool-icon { font-size: 32px; margin-bottom: 16px; display: inline-block; }
+.tool-name { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
+.tool-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+
+.content-showcase { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--r); overflow: hidden; margin-top: 40px; transition: all 0.3s; }
+.content-showcase:hover { border-color: var(--accent); box-shadow: var(--glow); }
+.showcase-header { padding: 20px 24px; border-bottom: 1px solid var(--border-color); background: rgba(0,0,0,0.02); display: flex; justify-content: space-between; align-items: center; }
+.showcase-title { font-weight: 700; font-size: 16px; color: var(--text-main); }
+.showcase-badge { font-size: 12px; font-family: 'JetBrains Mono', monospace; background: var(--accent); color: var(--btn-text); padding: 4px 10px; border-radius: 100px; }
+.showcase-body { padding: 32px 24px; }
+.showcase-prompt { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); background: rgba(79, 195, 247, 0.05); border-left: 3px solid var(--accent); padding: 16px; margin-bottom: 24px; white-space: pre-wrap; line-height: 1.6; }
+
+.nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 64px 48px; gap: 16px; position: relative; z-index: 1; flex-wrap: wrap; }
+@media(max-width:768px){ .breadcrumb,.task-hero,section,.nav-buttons{padding-left:24px;padding-right:24px;} }
+</style>
+  <link rel="apple-touch-icon" href="https://lequangphuc.github.io/portfolio/cover.jpg">
+</head>
+<body>
+
+<div id="intro-screen">
+  <script>if(sessionStorage.getItem("portfolio_intro_seen")) document.getElementById("intro-screen").style.display = "none";</script>
+  <div class="intro-logo">Portfolio<span>.dev</span></div>
+  <div class="intro-tagline">Nhập Môn Công Nghệ Số &amp; AI</div>
+  <div class="intro-bar-wrap"><div class="intro-bar"></div></div>
+</div>
+
+<div id="cursor-dot"></div>
+<canvas id="particles-canvas"></canvas>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">Portfolio Số</a>
+  <div class="nav-links">
+    <a href="index.html">Trang chủ</a>
+    <a href="index.html#about">Về tôi</a>
+    <a href="index.html#chapters">Bài giảng</a>
+    <a href="index.html#tasks" class="active">Nhiệm vụ</a>
+    <a href="projects.html">Dự án</a>
+    <a href="reflection.html">Tổng kết</a>
+  </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Chuyển đổi giao diện">☀️</button>
+  <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+</nav>
+
+<div class="sub-nav">
+  <a href="#overview">Tổng quan</a>
+  <a href="#tools">Công cụ AI</a>
+  <a href="#showcase">Sản phẩm số</a>
+  <a href="#reflection">Quy trình</a>
+</div>
+
+<div class="breadcrumb reveal">
+  <a href="index.html">Portfolio</a>
+  <span>/</span>
+  <a href="index.html#tasks">Nhiệm vụ thực hành</a>
+  <span>/</span>
+  Nhiệm vụ 5
+</div>
+
+<div class="task-hero">
+  <div class="task-eyebrow reveal">Nhiệm Vụ 5 · Mục 5.4 · Bài tập tuần 5</div>
+  <h1 class="reveal">Sáng Tạo Nội Dung Số<br><em>Với Trí Tuệ Nhân Tạo</em></h1>
+  <p class="task-hero-desc reveal">
+    Ứng dụng AI tạo sinh (Generative AI) để sản xuất nội dung kỹ thuật. Từ việc lên ý tưởng kịch bản bằng Claude, tạo hình ảnh minh họa bằng Midjourney, đến hoàn thiện bài viết truyền thông công nghệ.
+  </p>
+  <div class="meta-pills reveal">
+    <div class="meta-pill">📅 <strong>Tháng 4, 2026</strong></div>
+    <div class="meta-pill">🎨 <strong>Midjourney / DALL-E 3</strong></div>
+    <div class="meta-pill">📝 <strong>Claude 3.5 Sonnet</strong></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="overview">
+  <div class="section-label reveal">Mục tiêu dự án</div>
+  <h2 class="section-title reveal">Chuyển hóa ý tưởng thành sản phẩm đa phương tiện</h2>
+  <p class="section-sub reveal">
+    Trong kỷ nguyên số, một kỹ sư không chỉ cần code giỏi mà còn phải biết trình bày ý tưởng kỹ thuật một cách trực quan, sinh động để thuyết phục nhà đầu tư và khách hàng. Trí tuệ nhân tạo tạo sinh (GenAI) là công cụ đắc lực nhất cho việc này.
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<section id="tools">
+  <div class="section-label reveal">Tech Stack</div>
+  <h2 class="section-title reveal">Các mô hình AI đã sử dụng</h2>
+  
+  <div class="tool-grid">
+    <div class="tool-card reveal">
+      <div class="tool-icon">🤖</div>
+      <div class="tool-name">Claude 3.5 Sonnet</div>
+      <div class="tool-desc">
+        Sử dụng cho Text-to-Text. Claude được chọn thay vì ChatGPT do có khả năng hành văn học thuật tự nhiên hơn và lập luận kỹ thuật logic, ít bị "ảo giác" thông tin.
+      </div>
+    </div>
+    <div class="tool-card reveal">
+      <div class="tool-icon">🎨</div>
+      <div class="tool-name">Midjourney v6</div>
+      <div class="tool-desc">
+        Sử dụng cho Text-to-Image. Khả năng render chi tiết vật lý, ánh sáng và màu sắc điện ảnh của Midjourney giúp tạo ra hình ảnh linh kiện điện tử chân thực và ấn tượng.
+      </div>
+    </div>
+    <div class="tool-card reveal">
+      <div class="tool-icon">🎵</div>
+      <div class="tool-name">ElevenLabs</div>
+      <div class="tool-desc">
+        Sử dụng cho Text-to-Speech (Thuyết minh). Chuyển đổi kịch bản thành giọng đọc truyền cảm, có ngữ điệu tự nhiên phục vụ cho việc làm video thuyết trình.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="showcase">
+  <div class="section-label reveal">Trưng bày sản phẩm</div>
+  <h2 class="section-title reveal">Bài viết truyền thông công nghệ</h2>
+  <p class="section-sub reveal">
+    Sản phẩm: Một blog post giải thích về "Chip AI (NPU) trên thiết bị di động" dành cho đối tượng người dùng đại chúng, kết hợp văn bản và hình ảnh AI.
+  </p>
+
+  <div class="content-showcase reveal">
+    <div class="showcase-header">
+      <div class="showcase-title">Prompt: Tạo hình ảnh minh họa (Midjourney)</div>
+      <div class="showcase-badge">Image Gen</div>
+    </div>
+    <div class="showcase-body">
+      <div class="showcase-prompt">/imagine prompt: A futuristic AI neural processing unit microchip glowing with cyan and gold neon traces on a dark motherboard, hyper-realistic, macro photography, cinematic lighting, depth of field, 8k resolution --ar 16:9 --style raw --v 6.0</div>
+      <div style="background:#111; color:#fff; padding: 40px; text-align: center; border-radius: 8px; font-style: italic; opacity: 0.8;">
+        [Hình ảnh: Một con chip NPU phát sáng với các đường vân mạch điện màu xanh cyan và vàng, chụp cận cảnh sắc nét]
+      </div>
+    </div>
+  </div>
+
+  <div class="content-showcase reveal" style="margin-top: 32px;">
+    <div class="showcase-header">
+      <div class="showcase-title">Prompt: Viết nội dung giải thích kỹ thuật (Claude)</div>
+      <div class="showcase-badge">Text Gen</div>
+    </div>
+    <div class="showcase-body">
+      <div class="showcase-prompt">Đóng vai một chuyên gia công nghệ từ The Verge. Viết một bài giải thích ngắn (300 từ) về NPU (Neural Processing Unit) khác gì với CPU và GPU thông thường. 
+Yêu cầu:
+- Ngôn ngữ: Tiếng Việt, thân thiện, dễ hiểu cho người không chuyên.
+- Sử dụng phép ẩn dụ liên quan đến "Nhà máy" hoặc "Giao thông".
+- Format bài viết thành các đoạn nhỏ, có tiêu đề phụ.</div>
+      
+      <div style="color: var(--text-main); font-size: 15px; line-height: 1.8;">
+        <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--accent);">NPU: "Làn đường ưu tiên" cho Trí tuệ nhân tạo</h3>
+        <p style="margin-bottom: 16px;">Bạn có bao giờ thắc mắc tại sao chiếc điện thoại của mình có thể tách nền ảnh trong nháy mắt hay dịch trực tiếp giọng nói mà không bị nóng máy? Bí mật nằm ở một bộ phận mới: NPU.</p>
+        
+        <p style="margin-bottom: 16px;">Để dễ hình dung, hãy tưởng tượng hệ thống máy tính của bạn như một hệ thống giao thông thành phố:</p>
+        <ul style="margin-bottom: 16px; padding-left: 20px; color: var(--text-muted);">
+          <li style="margin-bottom: 8px;"><strong>CPU (Vi xử lý trung tâm):</strong> Là cảnh sát giao thông tổng hợp. Họ có thể xử lý mọi tình huống từ xe cộ đến người đi bộ, nhưng chỉ xử lý được từng việc một cách tuần tự. Rất giỏi việc khó, nhưng dễ bị quá tải nếu xe đông.</li>
+          <li style="margin-bottom: 8px;"><strong>GPU (Vi xử lý đồ họa):</strong> Là những chiếc xe buýt chở khách cỡ lớn. Cùng một lúc chở được rất nhiều người (render hàng triệu điểm ảnh), nhưng chỉ đi theo tuyến cố định.</li>
+          <li><strong>NPU (Vi xử lý thần kinh):</strong> Đây chính là làn đường cao tốc thông minh dành riêng cho xe cứu thương và xe cứu hỏa. Nó được thiết kế độc quyền để giải quyết một loại bài toán duy nhất: tính toán ma trận thần kinh của AI với tốc độ chớp nhoáng và tiết kiệm năng lượng tối đa.</li>
+        </ul>
+        <p>Bằng cách giao việc xử lý AI cho NPU, CPU sẽ được rảnh rỗi để làm các công việc khác, giúp điện thoại của bạn mượt mà hơn và pin "trâu" hơn rất nhiều.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="reflection">
+  <div class="section-label reveal">Nhìn lại quy trình</div>
+  <h2 class="section-title reveal">Bản quyền & Sáng tạo</h2>
+  <div style="background: var(--bg-card); border-left: 4px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 40px; margin-top: 40px; backdrop-filter: blur(8px);" class="reveal">
+    <p style="font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
+      Trong quá trình thực hiện nhiệm vụ này, tôi nhận ra thách thức lớn nhất không phải là tạo ra nội dung, mà là <strong>tinh chỉnh và kiểm soát (steering)</strong> AI để tạo ra đúng thứ mình muốn. Midjourney ban đầu thường tạo ra các bức ảnh "quá ảo" hoặc mang hơi hướm khoa học viễn tưởng không thực tế, yêu cầu tôi phải học cách sử dụng các tham số như <code style="font-family: monospace; color: var(--accent);">--style raw</code> để có hình ảnh mang tính kỹ thuật hơn.
+    </p>
+    <p style="font-size: 16px; color: var(--text-muted); line-height: 1.8;">
+      Về vấn đề bản quyền số, sản phẩm tạo ra bởi AI hiện tại vẫn nằm trong vùng xám pháp lý. Vì vậy, tôi đã cẩn thận không sử dụng hình ảnh của nghệ sĩ cụ thể nào làm reference (tham chiếu), mà chỉ dùng các mô tả kỹ thuật nhiếp ảnh để tạo phong cách.
+    </p>
+  </div>
+</section>
+
+<div class="nav-buttons">
+  <a href="task4.html" class="btn-outline">← Nhiệm vụ 4: Hợp tác nhóm</a>
+  <a href="task6.html" class="btn-primary">Nhiệm vụ 6: Đạo đức AI →</a>
+</div>
+
+<footer>
+  <div class="footer-brand">Portfolio Số</div>
+  <p class="footer-text">
+    Lê Quang Phúc · Nhập Môn Công Nghệ Số & AI<br>
+    Đại Học Công Nghệ - ĐHQGHN · Học kỳ 2 · 2025–2026
+  </p>
+</footer>
+
+<script src="portfolio.js"></script>
+<script>
+const subNavSections = ['overview', 'tools', 'showcase', 'reflection'];
+window.addEventListener('scroll', () => {
+  if (typeof isSubNavClicking !== 'undefined' && isSubNavClicking) return;
+  subNavSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const link = document.querySelector(`.sub-nav a[href="#${id}"]`);
+    if (link) {
+      if (rect.top <= 140 && rect.bottom > 140) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    }
+  });
+}, { passive: true });
+
+let isSubNavClicking = false;
+document.querySelectorAll('.sub-nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        isSubNavClicking = true;
+        const offset = 92;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+        setTimeout(() => isSubNavClicking = false, 800);
+      }
+      document.querySelectorAll('.sub-nav a').forEach(item => item.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>

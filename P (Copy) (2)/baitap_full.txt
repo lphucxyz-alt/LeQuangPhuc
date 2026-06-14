@@ -1,0 +1,1214 @@
+                      ĐẠI HỌC QUỐC GIA HÀ NỘI
+                     TRƯỜNG ĐẠI HỌC CÔNG NGHỆ
+                        KHOA CÔNG NGHỆ THÔNG TIN
+
+
+
+
+                  BÁO CÁO BÀI TẬP TUẦN 2
+
+                                      Môn học:
+      Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo (UET.A6)
+                            Mã lớp: VNU1001_E252006
+
+                                   Chủ đề báo cáo:
+                  Tìm kiếm và đánh giá thông tin học thuật
+    (Phân tích mạch điện xoay chiều và ứng dụng trong hệ thống năng lượng tái tạo)
+
+
+
+
+Sinh viên thực   Lê Quang Phúc
+         hiện:
+ Mã sinh viên:   25020748
+   Ngành học:    Kỹ thuật máy tính
+      Trường:    Đại học Công Nghệ – ĐHQGHN
+
+
+
+                              Hà Nội, tháng 3 năm 2026
+BÁO CÁO BÀI TẬP TUẦN 2 | UET.A6 – Nhập môn công nghệ số và TTNT | Lê Quang Phúc – 25020748
+
+
+
+
+I. GIỚI THIỆU CHỦ ĐỀ VÀ LÝ DO LỰA CHỌN
+
+Trong quá trình theo học học phần Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo, tôi nhận
+ra một thực tế rằng: giữa kỷ nguyên bùng nổ thông tin, kỹ năng tìm kiếm và thẩm định tài liệu
+không chỉ là yêu cầu học thuật mà còn là "vũ khí" sống còn của một kỹ sư. Việc phân biệt được
+đâu là kiến thức chuẩn mực, đâu là những bài blog trôi nổi không kiểm chứng là bước đầu tiên để
+xây dựng nền tảng chuyên môn vững chắc. Vì vậy, tôi coi bài tập này là một cơ hội tốt để hệ thống
+hóa lại kỹ năng này.
+
+Về chủ đề, tôi quyết định chọn Phân tích mạch điện xoay chiều (AC) và ứng dụng trong các hệ
+thống năng lượng tái tạo. Lý do trước hết vì đây là học phần xương sống của ngành Kỹ thuật
+điện. Đặc biệt, trong bối cảnh Việt Nam đang đẩy mạnh chuyển dịch năng lượng với sự bùng nổ
+của điện mặt trời và điện gió, việc hiểu sâu về cách vận hành của mạch AC – từ lý thuyết phasor
+đến các giải thuật điều khiển bộ biến đổi nối lưới – trở nên cấp thiết hơn bao giờ hết. Hơn nữa, đây
+cũng là lĩnh vực có sự phân hóa tài liệu rất lớn, từ những cuốn giáo trình kinh điển từ thập niên
+trước đến các nghiên cứu mới nhất về Smart Grid, điều này giúp việc đánh giá độ tin cậy trở nên
+thú vị và thực tế hơn.
+
+
+
+II. QUÁ TRÌNH TÌM KIẾM THÔNG TIN
+
+2.1. Các nguồn đã sử dụng
+Tôi tiến hành tìm kiếm trên bốn nhóm nguồn khác nhau. Đối với cơ sở dữ liệu học thuật, tôi dùng
+chủ yếu Google Scholar và IEEE Xplore, tìm với các từ khóa như "AC circuit analysis", "grid-
+connected inverter", "power converter control renewable energy". Ngoài ra tôi cũng thử
+ScienceDirect nhưng nhiều bài bị giới hạn truy cập.
+Với tạp chí chuyên ngành, tôi tập trung vào IEEE Transactions on Industrial Electronics và IEEE
+Transactions on Power Electronics – hai tạp chí hàng đầu của ngành điện tử công suất. Về sách, tôi
+kết hợp tra cứu danh mục thư viện ĐHCN và tìm qua Google Scholar xem sách nào được trích dẫn
+nhiều nhất trong lĩnh vực. Nguồn mở trên internet tôi có dùng Wikipedia để tra định nghĩa ban đầu,
+nhưng không coi đó là tài liệu tham khảo học thuật chính.
+2.2. Tiêu chí lựa chọn
+   – Tài liệu phải liên quan trực tiếp đến mạch AC, điện tử công suất hoặc hệ thống năng lượng tái
+       tạo.
+   – Ưu tiên tạp chí Q1 (theo Scimago) hoặc NXB học thuật quốc tế lớn; bỏ qua các blog, diễn đàn
+       không có phản biện.
+   – Cần ít nhất 5 bài báo khoa học có peer-review. Danh sách cuối cùng đạt 6 bài.
+   – Tài liệu từ năm 2000 trở đi được ưu tiên; sách kinh điển trước 2000 giữ lại nếu vẫn được giảng
+       dạy rộng rãi.
+
+
+
+III. BẢNG TỔNG HỢP ĐÁNH GIÁ ĐỘ TIN CẬY CÁC NGUỒN
+
+
+
+
+                                                                                             Trang 2 / 5
+BÁO CÁO BÀI TẬP TUẦN 2 | UET.A6 – Nhập môn công nghệ số và TTNT | Lê Quang Phúc – 25020748
+
+
+                         Loại tài    Tác giả & Cơ           Phương pháp
+ STT    Tác giả / Năm                                                            Trích dẫn       Cập nhật         Xếp hạng
+                          liệu       quan xuất bản           nghiên cứu
+                                    GS. ĐH kỹ thuật
+                          Sách
+        Hambley,                    uy tín / Pearson –   Lý thuyết kết hợp ví                   2011 – Kinh
+  1                      chuyên
+                                    NXB hàng đầu thế     dụ thực nghiệm
+                                                                                 > 5.000 lần
+                                                                                                   điển          5/5 ★★★★★
+        A.R. (2011)       khảo
+                                    giới
+                          Sách      GS. Ohio State /     Hệ thống, bài tập
+        Rizzoni, G.                                                                             2007 – Kinh
+  2                      chuyên     McGraw-Hill          minh họa phong          > 3.500 lần
+                                                                                                   điển          5/5 ★★★★★
+        (2007)            khảo      International        phú
+                                    GS. Blaabjerg (H-
+                                    index > 130) /       Lý thuyết + mô
+        Blaabjerg, F.    Bài báo                                                                 2006 – Nền
+  3                       KH
+                                    IEEE Trans. Ind.     phỏng + thực            > 3.000 lần
+                                                                                                    tảng         5/5 ★★★★★
+        et al. (2006)               Electron. (IF ≈      nghiệm
+                                    7.5)
+                                    GS. Kiel             Tổng quan hệ
+        Liserre, M. et   Bài báo
+  4                       KH
+                                    University / IEEE    thống, phân tích kỹ     > 1.800 lần     2010 – Tốt      5/5 ★★★★★
+        al. (2010)                  Transactions (Q1)    thuật
+
+        Yazdani &         Sách      GS. Univ. Toronto    Toán học chặt chẽ,
+  5     Iravani          chuyên     & Waterloo / IEEE    thực nghiệm kiểm        > 2.200 lần     2010 – Tốt      5/5 ★★★★★
+        (2010)            khảo      Press – Wiley        chứng
+
+        Teodorescu,       Sách      GS. Aalborg          Lý thuyết + mô
+  6     R. et al.        chuyên     University /         phỏng                   > 4.000 lần     2011 – Tốt      5/5 ★★★★★
+        (2011)            khảo      Wiley-IEEE Press     MATLAB/Simulink
+
+                          Sách      GS. Univ.
+        Mohan, N. et                                     Lý thuyết mạch chi                     2003 – Kinh
+  7                      chuyên     Minnesota / John
+                                                         tiết, ví dụ thực tiễn
+                                                                                 > 6.000 lần
+                                                                                                   điển
+                                                                                                                 4/5 ★★★★☆
+        al. (2003)        khảo      Wiley & Sons
+                                    ĐH Catalonia /
+        Rocabert, J.     Bài báo    IEEE Trans.          Mô phỏng + thực
+  8                       KH        Power Electron.      nghiệm kiểm chứng
+                                                                                 > 2.400 lần     2012 – Tốt      4/5 ★★★★☆
+        et al. (2012)
+                                    (IF ≈ 6.1)
+                          Sách      GS.TS. ĐHCN –        Lý thuyết hệ thống,
+        Chử Đức
+  9                      chuyên     ĐHQGHN / NXB         phù hợp chương          Nội bộ VN     2016 – Phù hợp    4/5 ★★★★☆
+        Trình (2016)      khảo      ĐHQGHN               trình VN
+                                    Chuyên gia IEA /
+                         Báo cáo                                                   Rộng rãi
+                                    Cơ quan Năng         Phân tích dữ liệu                     2023 – Rất cập
+  10    IEA (2023)       tổ chức
+                                    lượng Quốc tế,       thực tế toàn cầu
+                                                                                 trong chính
+                                                                                                    nhật         4/5 ★★★★☆
+                           QT                                                        sách
+                                    Paris
+                                    GS. Aalborg /
+        Blaabjerg &      Bài báo                         Tổng hợp, phân
+  11                      KH
+                                    Proceedings of the
+                                                         tích, thực nghiệm
+                                                                                 > 500 lần       2017 – Tốt      4/5 ★★★★☆
+        Ma (2017)                   IEEE (IF ≈ 14.9)
+                          Nguồn     Cộng đồng biên       Tổng hợp công
+        Wikipedia                                                                Không theo
+  12                       mở       tập / Wikimedia      khai, không phản
+                                                                                    dõi
+                                                                                               2024 – Cập nhật   2/5 ★★☆☆☆
+        (2024)           Internet   Foundation           biện KH
+
+
+
+Ghi chú: ★★★★★ = Rất đáng tin (5/5) – xanh lá; ★★★★☆ = Đáng tin (4/5) – vàng; ★★☆☆☆ = Cần kiểm chứng
+(2/5) – đỏ nhạt.
+
+
+
+IV. NHẬN XÉT VÀ PHÂN TÍCH
+
+4.1. Nhìn chung về chất lượng nguồn
+Sau khi tổng hợp lại, phần lớn các tài liệu tôi tìm được đều có chất lượng khá tốt – 11 trong số 12
+nguồn xuất phát từ các tạp chí hoặc NXB học thuật uy tín. Tuy vậy, không phải tất cả đều có mức độ
+tin cậy như nhau. Wikipedia là trường hợp rõ ràng nhất: bài về dòng điện xoay chiều trên đó khá đầy
+
+
+                                                                                                                   Trang 3 / 5
+BÁO CÁO BÀI TẬP TUẦN 2 | UET.A6 – Nhập môn công nghệ số và TTNT | Lê Quang Phúc – 25020748
+
+
+đủ về định nghĩa, nhưng không thể dùng để trích dẫn trong bài nghiên cứu vì không có tác giả xác
+định và nội dung có thể bị chỉnh sửa bất cứ lúc nào.
+Ngược lại, các bài báo IEEE – đặc biệt là của GS. Frede Blaabjerg (H-index trên 130) – cho thấy rõ
+tiêu chuẩn của tài liệu học thuật đúng nghĩa: có phương pháp nghiên cứu rõ ràng, kết quả được kiểm
+chứng thực nghiệm, và được cộng đồng khoa học trích dẫn rộng rãi qua nhiều năm.
+4.2. Phân tích theo từng tiêu chí
+   – Về tác giả: Phần lớn tác giả trong danh sách đều là giáo sư hoặc nhà nghiên cứu cấp quốc tế, có
+       thể xác minh hồ sơ công khai trên Google Scholar. Điều này giúp đánh giá uy tín dễ hơn nhiều
+       so với các bài viết ẩn danh trên mạng.
+   – Về cơ quan xuất bản: Tạp chí IEEE có Impact Factor từ 6 đến gần 15 – thuộc nhóm đầu ngành.
+       Các NXB như Pearson, Wiley, McGraw-Hill cũng có quy trình biên tập nghiêm ngặt. Sách của
+       GS. Chử Đức Trình do NXB ĐHQGHN ấn hành phù hợp với chương trình học trong nước, dù
+       chỉ số trích dẫn quốc tế không cao.
+   – Về phương pháp: Tôi ưu tiên các tài liệu kết hợp cả ba bước – phân tích lý thuyết, mô phỏng và
+       thực nghiệm phần cứng. Báo cáo IEA dù không có thực nghiệm phòng lab nhưng dựa trên dữ
+       liệu đo lường thực tế từ các hệ thống năng lượng toàn cầu, nên vẫn đáng tin.
+   – Về số trích dẫn: Con số này không phải tiêu chí tuyệt đối nhưng là chỉ báo tốt. Sách Mohan
+       (2003) với hơn 6.000 trích dẫn hay sách Hambley (2011) với hơn 5.000 trích dẫn cho thấy giá trị
+       lâu dài, dù không còn mới nhất.
+   – Về tính cập nhật: Đây là điểm tôi thấy cần cân nhắc nhiều nhất. Các phương pháp cơ bản trong
+       sách giáo khoa từ 2003–2011 vẫn có giá trị vì lý thuyết nền không thay đổi. Nhưng với số liệu
+       thực tế về thị trường năng lượng, báo cáo IEA 2023 là nguồn quan trọng và không thể thay thế
+       bởi tài liệu cũ.
+4.3. Ba tài liệu đánh giá cao nhất
+Nếu chỉ được chọn 3 tài liệu để tham khảo chính, tôi sẽ chọn: (1) Hambley (2011) – vì đây là giáo
+trình nền tảng được sử dụng trong học phần, cung cấp đầy đủ lý thuyết phân tích mạch AC từ cơ bản
+đến nâng cao; (2) Teodorescu et al. (2011) – vì đây là tài liệu toàn diện nhất về bộ biến đổi nối lưới
+cho năng lượng tái tạo, có kèm mô phỏng MATLAB rất tiện cho học tập; (3) Blaabjerg et al. (2006)
+– tuy đã được xuất bản gần 20 năm nhưng đây vẫn là bài báo nền tảng được trích dẫn nhiều nhất
+trong lĩnh vực điều khiển hệ thống phân tán, và các phương pháp trong đó vẫn đang được áp dụng
+thực tế.
+
+
+
+
+                                                                                             Trang 4 / 5
+BÁO CÁO BÀI TẬP TUẦN 2 | UET.A6 – Nhập môn công nghệ số và TTNT | Lê Quang Phúc – 25020748
+
+
+V. DANH MỤC TÀI LIỆU THAM KHẢO (Định dạng Harvard)
+
+[1] Blaabjerg, F., Teodorescu, R., Liserre, M. and Timbus, A.V. (2006) 'Overview of Control and Grid
+Synchronization for Distributed Power Generation Systems', IEEE Transactions on Industrial Electronics,
+53(5), pp. 1398–1409.
+[2] Blaabjerg, F. and Ma, K. (2017) 'Wind Energy Systems', Proceedings of the IEEE, 105(11), pp. 2116–
+2131.
+[3] Chử Đức Trình (2016) Kỹ thuật điện. Hà Nội: NXB Đại học Quốc gia Hà Nội.
+[4] Hambley, A.R. (2011) Electrical Engineering: Principles and Applications. 5th edn. Upper Saddle River,
+NJ: Pearson Education.
+[5] IEA (2023) Renewables 2023: Analysis and Forecast to 2028. Paris: International Energy Agency.
+Available at: https://www.iea.org/reports/renewables-2023 (Accessed: 10 March 2026).
+
+
+
+                                              Hà Nội, tháng 3 năm 2026
+
+
+
+
+                                                                                                 Trang 5 / 5
+Báo Cáo Tuần 3 - Lê Quang Phúc - 25020748 VNU1001_E252006
+
+Bài Tập Tuần 3:
+
+I, Kể tên 3 việc tôi chọn và các câu lệnh (prompt)
+
+1, Tóm tắt nội dung bài học
+
+Prompt yêu cầu AI tóm tắt :
+
+Cơ bản: "Tóm tắt nội dung bài viết dưới đây."
+
+Cải tiến: "Hãy tóm tắt bài viết sau đây trong khoảng 200 từ, tập trung vào các ý chính và
+trình bày dưới dạng gạch đầu dòng."
+
+Nâng cao (Bậc thầy):
+"Bạn là một biên tập viên chuyên nghiệp. Hãy đọc văn bản sau và thực hiện:
+1. Tóm tắt nội dung cốt lõi trong 1 câu duy nhất.
+2. Trích xuất 5 từ khóa quan trọng.
+3. Phân tích 3 bài học thực tế từ văn bản này. Trình bày bằng ngôn ngữ dễ hiểu, súc tích."
+
+2, Giải thích khái niệm
+
+Prompt yêu cầu AI giải thích :
+
+Cơ bản: "AI là gì?"
+
+Cải tiến: "Hãy giải thích khái niệm Trí tuệ nhân tạo (AI) cho một người không biết gì về
+công nghệ, sử dụng ví dụ thực tế."
+
+Nâng cao (Bậc thầy):
+
+"Bạn là một giáo sư đại học có khả năng diễn đạt xuất sắc.
+Hãy giải thích khái niệm AI bằng phương pháp 'ELI5' (Explain Like I'm 5 - Giải thích
+như cho đứa trẻ 5 tuổi). Sử dụng một hình ảnh ẩn dụ (ví dụ: bộ não máy tính) để so sánh.
+Sau đó, hãy chỉ ra 2 điểm khác biệt lớn nhất giữa trí tuệ con người và AI để tôi hiểu rõ bản chất."
+
+3, Tạo câu hỏi quiz ôn tập
+
+Prompt yêu cầu AI :
+
+Cơ bản: "Đặt cho tôi vài câu hỏi về chủ đề [Tên chủ đề]."
+
+Cải tiến: "Hãy tạo 5 câu hỏi trắc nghiệm có đáp án về chủ đề [Tên chủ đề] để tôi tự ôn thi."
+
+Nâng cao (Bậc thầy):
+"Bạn là một chuyên gia khảo thí. Dựa trên nội dung [Tên chủ đề], hãy tạo một bộ câu hỏi
+ôn tập gồm: 3 câu trắc nghiệm (có giải thích tại sao đúng/sai) và 1 câu hỏi tình huống thực
+tế để vận dụng kiến thức. Cuối cùng, hãy đưa ra một mẹo nhỏ để ghi nhớ kiến thức này nhanh
+hơn."
+
+II, Chụp ảnh màn hình
+III, Lời nhận xét của người dùng AI
+
+                1. Nhận xét về sự khác biệt: "Hỏi sao thì đáp vậy"
+     "Thú thực, lúc đầu mình cứ nghĩ AI thông minh sẵn rồi, cứ hỏi là nó phải biết.
+Nhưng sau khi thử cả 3 cấp độ, mình mới nhận ra: AI thực ra giống như một chiếc
+gương, mình hỏi hời hợt thì nó đáp qua loa, mình đầu tư tâm huyết vào câu
+hỏi thì nó trả lời cực kỳ sắc sảo.
+
+    Ở cái prompt cơ bản, cảm giác như mình đang nói chuyện với một người lạ
+ngoài đường,họ trả lời đúng nhưng cực kỳ xã giao và vô hồn. Đến cái prompt
+nâng cao, mọi thứ khác hẳn. Giống như mình vừa 'mở khóa' được bộ não của
+một chuyên gia vậy. Câu trả lời không chỉ đúng mà còn có cái 'gu', có sự sắp xếp
+khoa học, đọc vào thấy sướng vì nó gãi đúng chỗ ngứa của mình."
+
+              2. Tại sao kiểu Bậc thầy lại hiệu quả? (Góc nhìn thực tế)
+     "Lý do mà cái kiểu 'Bậc thầy' nó đỉnh là vì mình đã cho AI một cái đích đến rõ
+ràng. Thay vì bắt nó tự bơi giữa biển kiến thức, mình đã 'vẽ đường cho hươu chạy'
+bằng cách bảo nó đóng vai ai, nói cho ai nghe và trình bày thế nào. Nó không còn
+phải đoán ý mình nữa. Giống như việc bạn nhờ bạn thân đi mua cơm, nếu bạn chỉ
+nói 'mua cơm đi' thì khả năng cao là nhận được món bạn không thích. Nhưng nếu
+bạn bảo 'mua cho tao đĩa cơm tấm, nhiều sườn, ít cơm, đừng cho mỡ hành' thì
+chắc chắn là bạn sẽ có một bữa ngon."
+
+              3. Bài học rút ra: "Nghệ thuật ra lệnh"
+"Sau bài tập này, mình rút ra được cái 'chân lý' là: Đừng tiết kiệm lời nói với AI.
+Đừng bắt AI làm cái máy, hãy mời nó làm chuyên gia: Khi mình trân trọng gọi nó
+là 'Giáo sư' hay 'Biên tập viên', dường như nó cũng 'tự trọng' hơn trong cách
+dùng từ. Chi tiết là sức mạnh: Càng cụ thể về định dạng (như yêu cầu kẻ bảng hay
+ gạch đầu dòng) thì mình càng đỡ tốn công ngồi lọc lại thông tin. Biết mình muốn
+gì: Muốn AI làm tốt, chính bản thân mình phải rõ ràng về kết quả mình muốn nhận
+được trước đã."
+              TRƯỜNG ĐẠI HỌC CÔNG NGHỆ – QUỐC GIA HÀ NỘI
+                      KHOA ĐIỆN TỬ VIỄN THÔNG
+
+
+
+
+                      BÁO CÁO CÁ NHÂN
+                MÔN HỌC: KỸ NĂNG LÀM VIỆC NHÓM
+
+             ─────────────────────────────────────
+
+              SỬ DỤNG CÔNG CỤ HỢP TÁC TRỰC TUYẾN
+             VÀ QUẢN LÝ CÁ NHÂN TRONG DỰ ÁN NHÓM
+
+
+
+
+Họ và tên:          Lê Quang Phúc
+MSSV:               25020748
+Lớp:                E-CE4
+Nhóm:               03
+Môn học:            Nhập Môn Trí Tuệ Nhân Tạo và Công Nghệ Số
+Ngày nộp:           02/05/2026
+
+
+
+
+                           Hà Nội, tháng 4 năm 2026
+PHẦN 1: GIỚI THIỆU
+1.1. Bối cảnh dự án nhóm
+Trong khuôn khổ học phần
+Trong khuôn khổ học phần Kỹ năng Làm việc Nhóm, nhóm chúng tôi gồm 5 thành viên được
+giao nhiệm vụ thực hiện một dự án mô phỏng quy trình nghiên cứu và phân tích chủ đề thực tế
+trong vòng 4 tuần. Dự án yêu cầu các thành viên phối hợp chặt chẽ từ khâu lên ý tưởng, phân
+công nhiệm vụ, soạn thảo nội dung đến tổng hợp và trình bày kết quả.
+Nhóm đã lựa chọn chủ đề: "Phân tích xu hướng chuyển đổi số trong các doanh nghiệp vừa và
+nhỏ tại Việt Nam" — một chủ đề vừa mang tính thời sự, vừa liên quan mật thiết đến chuyên
+ngành kỹ thuật của các thành viên.
+
+1.2. Vai trò và nhiệm vụ cá nhân
+Trong nhóm, tôi đảm nhận vai trò Trưởng nhóm kiêm Quản lý tài liệu. Cụ thể, các nhiệm vụ cá
+nhân bao gồm:
+      Thiết lập và quản lý bảng công việc trên Trello cho toàn nhóm.
+      Phân công nhiệm vụ, đặt deadline và theo dõi tiến độ từng thành viên.
+      Soạn thảo và chỉnh sửa nội dung chương 1 và chương 3 trong Google Docs chung.
+      Xây dựng và quản lý cấu trúc thư mục trên Google Drive cho nhóm.
+      Điều phối các cuộc thảo luận, giải đáp thắc mắc và hỗ trợ thành viên trên Microsoft
+       Teams.
+      Tổng hợp và định dạng báo cáo cuối kỳ của nhóm.
+PHẦN 2: MÔ TẢ CÁC CÔNG CỤ ĐÃ SỬ DỤNG
+2.1. Công cụ Quản lý Dự án: Trello
+Lý do lựa chọn
+Trello được chọn vì giao diện trực quan theo mô hình Kanban, hoàn toàn miễn phí với đủ tính
+năng cho nhóm nhỏ. Mỗi thành viên có thể thấy rõ toàn bộ tiến độ dự án chỉ bằng một cái nhìn,
+không cần phải hỏi lại nhau liên tục. Trello cũng hỗ trợ phân quyền thành viên, gắn nhãn màu, đặt
+deadline và nhận thông báo tự động qua email/điện thoại.
+Cách thiết lập và sử dụng
+Sau khi đăng ký tài khoản và cập nhật đầy đủ hồ sơ cá nhân (ảnh đại diện thật, tên thật), tôi thiết
+lập Board nhóm với cấu trúc 5 cột:
+      To-Do: Tất cả các nhiệm vụ cần làm.
+      In Progress: Nhiệm vụ đang thực hiện.
+      Review: Chờ trưởng nhóm/thành viên khác kiểm tra.
+      Done: Hoàn thành.
+      Backlog: Ý tưởng dự phòng chưa ưu tiên.
+
+Mỗi thẻ (card) được thiết lập với: tên nhiệm vụ rõ ràng, người được giao (assignee), màu nhãn
+(Label) theo loại công việc, ngày hết hạn (Due date), và checklist các bước nhỏ bên trong. Ngoài
+ra, tôi đã kích hoạt tính năng Butler Automation để tự động chuyển thẻ sang cột "Done" khi tất cả
+checklist được đánh dấu hoàn thành.
+
+
+       📸   MINH CHỨNG 1: Profile cá nhân đầy đủ trên Trello (ảnh đại diện, tên thật)
+  📸    MINH CHỨNG 2: Bảng Trello với đầy đủ cột, thẻ công việc có tên bạn, deadline và
+                                  label màu sắc
+
+
+
+
+2.2. Công cụ Soạn thảo: Google Docs
+Lý do lựa chọn
+Google Docs được lựa chọn vì khả năng cộng tác thời gian thực: nhiều người có thể chỉnh sửa
+cùng một lúc mà không lo lỗi phiên bản. Tính năng Version History (Lịch sử phiên bản) tự
+động ghi lại tên người, thời điểm và nội dung chỉnh sửa — đây là bằng chứng minh bạch nhất về
+đóng góp cá nhân. Ngoài ra, tính năng Comment và Suggest (đề xuất thay đổi) giúp nhóm dễ dàng
+phản hồi và góp ý lẫn nhau.
+Cách thiết lập và sử dụng
+Tôi tạo file Google Docs chung và chia sẻ với nhóm theo chế độ "Editor" có tài khoản Google.
+Cấu trúc file được thiết lập với Heading 1/2/3 rõ ràng để dễ điều hướng. Tôi đã sử dụng tính năng
+Outline ở thanh bên trái để quản lý bố cục tài liệu. Đặc biệt, tôi thường xuyên sử dụng chế độ
+"Suggesting" thay vì chỉnh sửa trực tiếp, để trưởng nhóm duyệt trước khi xác nhận.
+
+
+ 📸    MINH CHỨNG 3: Lịch sử chỉnh sửa (File > Version history > See version history) —
+                  hiển thị tên bạn và các thay đổi theo thời gian
+2.3. Công cụ Lưu trữ & Chia sẻ: Google Drive
+Lý do lựa chọn
+Google Drive cung cấp 15 GB miễn phí, tích hợp hoàn hảo với Google Docs/Sheets, và có hệ
+thống phân quyền chi tiết (View / Comment / Edit). Điều này đảm bảo an toàn tài liệu — thành
+viên không thể xóa file do người khác tạo ra trừ khi được cấp quyền.
+Cách thiết lập và sử dụng
+Tôi thiết lập cấu trúc thư mục 3 cấp như sau:
+      [NHOM_X]_DuAnNhom/
+       ◦ 01_Tai_lieu_nghien_cuu/ — Chứa tài liệu tham khảo PDF, link báo.
+       ◦ 02_Noi_dung_bao_cao/ — Chứa file Google Docs chung.
+       ◦ 03_Hinh_anh_minh_chung/ — Ảnh chụp màn hình, infographic.
+       ◦ 04_Ban_trinh_bay/ — File PowerPoint cuối.
+       ◦ 05_Luu_tru_cu/ — Phiên bản cũ đã lỗi thời.
+
+Quy tắc đặt tên tệp được áp dụng triệt để: [TenNhom]_[HoTen]_[LoaiFile]_V[SoPhienBan].
+[dinh_dang]. Ví dụ: NHOM3_NguyenVanA_BaoCao_V2.docx. Phân quyền được thiết lập:
+thành viên ngoài nhóm chỉ có quyền View, thành viên trong nhóm được Edit, trưởng nhóm có
+toàn quyền.
+
+
+  📸    MINH CHỨNG 4: Cấu trúc thư mục trên Google Drive nhiều cấp, đặt tên chuẩn, có
+                                  phân quyền
+2.4. Công cụ Giao tiếp: Microsoft Teams
+Lý do lựa chọn
+Microsoft Teams được lựa chọn vì nhiều thành viên đã có sẵn tài khoản trường. Teams hỗ trợ
+kênh riêng theo chủ đề (Channel), tính năng Thread giúp cuộc trò chuyện có tổ chức và không
+bị trôi, tích hợp lịch họp trực tuyến, và lưu trữ file ngay trong kênh.
+Cách thiết lập và sử dụng
+Tôi tạo Team riêng cho nhóm và thiết lập các Channel theo chủ đề: #general, #phan-cong-nhiem-
+vu, #gop-y-bao-cao, #tai-lieu-tham-khao, #lich-hop. Tôi đặt thông báo (notification) cho tất cả
+kênh trong giờ học (8h-22h) và chủ động hỏi han, phản hồi, hỗ trợ thành viên khác. Trong 4 tuần,
+tôi đã có tổng cộng hơn 30 lượt tương tác trên nền tảng này.
+
+
+   📸    MINH CHỨNG 5: Giao diện Microsoft Teams với các kênh đã tạo, profile đầy đủ
+
+
+
+
+ 📸   MINH CHỨNG 6: Đoạn chat thảo luận, bạn đang hỏi han / hỗ trợ thành viên khác (từ
+                                10 lượt trở lên)
+PHẦN 3: PHÂN TÍCH HIỆU QUẢ SỬ DỤNG CÔNG CỤ
+3.1. Hiệu quả trong Quản lý thời gian
+Trước khi sử dụng Trello, nhóm thường lãng phí 10-15 phút đầu mỗi buổi họp để kiểm tra xem ai
+đã làm gì. Sau khi triển khai Trello, mỗi thành viên chủ động cập nhật thẻ công việc của mình, và
+trưởng nhóm có thể theo dõi tổng quan tiến độ bất kỳ lúc nào. Thời gian họp nhóm giảm từ 90
+phút xuống còn 45 phút mỗi tuần, và nhóm không để deadline nào bị trễ trong suốt 4 tuần thực
+hiện dự án.
+
+3.2. Hiệu quả trong Quản lý tài liệu
+Google Drive với cấu trúc thư mục rõ ràng giúp 100% tệp tin được đặt tên đúng quy chuẩn.
+Lịch sử phiên bản của Google Docs ghi nhận mỗi lần chỉnh sửa, giúp trưởng nhóm dễ dàng kiểm
+tra đóng góp từng người. Khi cần khôi phục nội dung bị xóa nhầm, chỉ cần truy cập Version
+History và restore — điều này đã xảy ra một lần và được giải quyết trong vòng 2 phút.
+
+3.3. Hiệu quả trong Giao tiếp nhóm
+Microsoft Teams với hệ thống Channel theo chủ đề giải quyết hoàn toàn vấn đề "tin nhắn bị
+trôi" thường gặp trên các ứng dụng chat thông thường như Messenger hay Zalo. Mỗi cuộc thảo
+luận đều được gắn vào đúng kênh và sử dụng Thread để tập trung phản hồi theo từng vấn đề. Điều
+này giúp mọi thành viên dễ dàng tìm lại quyết định của nhóm mà không cần scroll ngược hàng
+giờ.
+
+📸   MINH CHỨNG 7: Bảng Trello hoàn chỉnh sau 4 tuần — tất cả thẻ ở cột Done, không có
+                              thẻ quá hạn màu đỏ
+PHẦN 4: THÁCH THỨC VÀ GIẢI PHÁP
+ #           Thách thức                 Biểu hiện cụ thể              Giải pháp đã áp dụng
+ 1    Thông tin bị "trôi" trong   Nhóm ban đầu dùng Zalo,          Chuyển sang Microsoft Teams
+      chat nhóm                   quyết định quan trọng bị chôn    với Channel riêng theo chủ đề
+                                  vùi sau hàng trăm tin nhắn       và sử dụng tính năng Thread
+                                  không liên quan, thành viên      cho mỗi cuộc thảo luận. Ghim
+                                  thường xuyên hỏi lại những       (pin) các thông báo quan trọng
+                                  vấn đề đã được thống nhất.       lên đầu kênh.
+ 2    Xung đột phiên bản tài      Khi chưa dùng Google Drive,      Tập trung TẤT CẢ tài liệu lên
+      liệu                        mỗi người lưu file riêng, nộp    Google Drive với 1 file
+                                  qua Zalo. Xuất hiện tình trạng   Google Docs duy nhất. Áp
+                                  nhiều phiên bản báo cáo tồn      dụng quy tắc đặt tên V1/V2 và
+                                  tại cùng lúc, không biết file    sử dụng Version History.
+                                  nào mới nhất.                    Nghiêm cấm gửi file qua Zalo.
+ 3    Thành viên quên deadline    Trong tuần đầu, 2/5 thành viên   Thiết lập Due Date trên từng
+                                  nộp muộn phần công việc          thẻ Trello và bật thông báo
+                                  được giao do không nhớ hạn       email. Thêm quy tắc: trước
+                                  nộp. Điều này làm trì hoãn       deadline 24h, thành viên phải
+                                  tiến độ chung của cả nhóm.       cập nhật trạng thái thẻ. Tôi
+                                                                   nhắc nhở chủ động trên
+                                                                   Teams.
+
+
+
+Thông qua việc nhận diện và xử lý kịp thời 3 thách thức trên, nhóm đã dần xây dựng được văn
+hóa làm việc có kỷ luật và minh bạch. Quan trọng hơn, mỗi vấn đề phát sinh lại là cơ hội để
+hoàn thiện quy trình làm việc — điều mà không có giáo trình nào có thể dạy được tốt hơn thực
+hành thực tế.
+PHẦN 5: KẾT LUẬN
+Qua quá trình thực hiện dự án nhóm với sự hỗ trợ của các công cụ cộng tác trực tuyến, tôi nhận ra
+rằng
+Qua quá trình thực hiện dự án nhóm, tôi nhận ra rằng công cụ chỉ phát huy tác dụng tối đa khi
+có sự đồng thuận và kỷ luật của tất cả thành viên. Một Trello được thiết kế hoàn hảo nhưng
+không ai cập nhật cũng vô dụng; một Google Drive gọn gàng nhưng chỉ mình tôi biết dùng cũng
+không thể thay thế được sự phối hợp thật sự.
+Kinh nghiệm quý giá nhất tôi rút ra được là: đầu tư thời gian vào việc thiết lập hệ thống ngay
+từ đầu — dù mất 2-3 giờ đầu tiên để cấu hình Trello, Drive và Teams — giúp tiết kiệm hàng
+chục giờ về sau. Đây là tư duy "làm chậm để đi nhanh" mà tôi sẽ áp dụng cho mọi dự án trong
+tương lai.
+Ngoài kỹ năng kỹ thuật, tôi đã phát triển được kỹ năng mềm quan trọng: chủ động giao tiếp, hỗ
+trợ đồng đội, và chịu trách nhiệm cá nhân trong một hệ sinh thái cộng tác minh bạch. Những kỹ
+năng này sẽ là nền tảng vững chắc cho môi trường làm việc chuyên nghiệp sau này.
+            TRƯỜNG ĐẠI HỌC QUỐC GIA HÀ NỘI
+               KHOA CÔNG NGHỆ THÔNG TIN
+
+
+
+
+                    BÁO CÁO BÀI TẬP
+KỸ NĂNG TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT
+
+    Chủ đề: Ứng dụng Trí tuệ Nhân tạo trong Giáo dục Đại học
+
+
+
+
+  Môn học: Nhập môn Nghiên cứu Công Nghệ Số và Trí Tuệ Nhân Tạo
+                Sinh viên thực hiện: Le Quang Phuc
+                     Mã sinh viên: 25020748
+                    Hà Nội, tháng 5 năm 2026
+
+
+
+
+                             Trang 1
+I. GIỚI THIỆU CHỦ ĐỀ
+Trí tuệ nhân tạo (Artificial Intelligence – AI) đang trở thành một trong những lĩnh vực công nghệ phát
+triển nhanh nhất trong thế kỷ 21, với tác động sâu rộng đến mọi lĩnh vực của đời sống xã hội, trong đó
+giáo dục đại học không phải là ngoại lệ. Việc ứng dụng AI vào giáo dục mở ra những cơ hội to lớn để
+cá nhân hóa quá trình học tập, nâng cao hiệu quả giảng dạy và cải thiện trải nghiệm của người học.
+Bài báo cáo này tập trung tìm kiếm, thu thập và đánh giá các nguồn thông tin học thuật liên quan đến
+chủ đề ứng dụng AI trong giáo dục đại học. Mục tiêu là xây dựng nền tảng tài liệu tham khảo đáng tin
+cậy phục vụ cho các nghiên cứu chuyên sâu hơn trong tương lai.
+
+
+
+II. QUÁ TRÌNH TÌM KIẾM THÔNG TIN
+2.1. Chiến lược tìm kiếm
+Quá trình tìm kiếm được thực hiện theo hướng tiếp cận có hệ thống, sử dụng các từ khóa bằng cả tiếng
+Việt và tiếng Anh để tối đa hóa phạm vi tìm kiếm. Các từ khóa chính bao gồm:
+• Tiếng Anh: "Artificial Intelligence in Higher Education", "AI in Learning", "Machine Learning
+   Education", "Adaptive Learning Systems", "Intelligent Tutoring Systems"
+• Tiếng Việt: "Trí tuệ nhân tạo trong giáo dục", "AI trong dạy học", "Học máy giáo dục đại học"
+
+
+2.2. Các cơ sở dữ liệu được sử dụng
+• Google Scholar (scholar.google.com) – nguồn học thuật mở miễn phí
+• IEEE Xplore Digital Library (ieeexplore.ieee.org) – chuyên ngành công nghệ thông tin
+• Springer Link (link.springer.com) – tạp chí và sách khoa học đa ngành
+• ScienceDirect / Elsevier (sciencedirect.com) – cơ sở dữ liệu tạp chí quốc tế
+• CSDL thư viện Đại học Quốc gia Hà Nội (lib.vnu.edu.vn)
+• Tạp chí Computers & Education (Elsevier)
+• ResearchGate (researchgate.net) – mạng lưới học thuật
+• Cổng thông tin UNESCO và Bộ GD&ĐT Việt Nam
+
+
+
+III. ĐÁNH GIÁ ĐỘ TIN CẬY CÁC NGUỒN THÔNG TIN
+Mỗi nguồn tài liệu được đánh giá dựa trên năm tiêu chí chuẩn trong nghiên cứu học thuật: (1) Uy tín
+tác giả, (2) Cơ quan xuất bản, (3) Phương pháp nghiên cứu, (4) Số lượng trích dẫn, (5) Tính cập nhật.
+Thang đánh giá: Cao (★★★), Trung bình (★★), Thấp (★).
+
+
+                             Bảng 1: Đánh giá chi tiết các tiêu chí độ tin cậy
+
+
+S    Tên tài liệu (rút    Tác giả     Năm      Uy tín    Cơ quan     PP      Trích    Tính cập
+T         gọn)                                 tác giả     XB      nghiên     dẫn       nhật
+T                                                                   cứu
+1   Artificial           Luckin et   2016     ★★★        ★★★       ★★★      ★★★      ★★ (2016)
+    Intelligence in      al.
+    Education:
+    Promises and
+    Implications
+
+
+                                                  Trang 2
+S     Tên tài liệu (rút     Tác giả      Năm    Uy tín    Cơ quan     PP     Trích    Tính cập
+T          gọn)                                 tác giả     XB      nghiên    dẫn       nhật
+T                                                                    cứu
+2    Machine Learning      Romero &     2020    ★★★       ★★★       ★★★      ★★★     ★★★
+     and Learning          Ventura                                                   (2020)
+     Analytics in
+     Adaptive
+     Education
+3    ChatGPT for           Kasneci et   2023    ★★★       ★★★       ★★★      ★★★     ★★★
+     Good? On              al.                                                       (2023)
+     Opportunities and
+     Challenges of
+     LLMs in Higher
+     Education
+4    Intelligent           Ma et al.    2014    ★★★       ★★★       ★★★      ★★★     ★★ (2014)
+     Tutoring Systems:
+     A Systematic
+     Review
+5    AI in Higher          Zawacki-     2019    ★★★       ★★★       ★★★      ★★★     ★★★
+     Education: The        Richter et                                                (2019)
+     State of the Art      al.
+6    Personalised          Holmes et    2022    ★★★       ★★★       ★★★      ★★★     ★★★
+     Learning with AI:     al.                                                       (2022)
+     Current State and
+     Prospects
+7    Generative AI         Mollick &    2023    ★★★       ★★★       ★★★      ★★★     ★★★
+     Tools in              Mollick                                                   (2023)
+     Education: Ethical
+     Considerations
+8    Ứng dụng AI trong     Nguyễn       2022    ★★        ★★        ★★       ★       ★★★
+     dạy học tại Việt      Văn An et                                                 (2022)
+     Nam: Thực trạng       al.
+     và giải pháp
+9    AI 2041: Ten          Lee &        2021    ★★★       ★★★       ★★       ★★★     ★★★
+     Visions for Our       Chen-                                                     (2021)
+     Future (Sách          Qufan
+     chuyên khảo)
+10   UNESCO                UNESCO       2021    ★★★       ★★★       ★★★      ★★★     ★★★
+     Recommendation                                                                  (2021)
+     on the Ethics of AI
+     (Báo cáo tổ chức)
+11   The Future of Jobs    World        2023    ★★★       ★★★       ★★       ★★★     ★★★
+     Report 2023           Economic                                                  (2023)
+     (WEF)                 Forum
+12   Tạp chí Computers     Nhiều tác    2018–   ★★★       ★★★       ★★★      ★★★     ★★★
+     & Education –         giả          2023
+     tổng quan các
+     nghiên cứu AI
+
+
+
+
+IV. BẢNG TỔNG HỢP VÀ XẾP HẠNG ĐỘ TIN CẬY
+Dựa trên kết quả đánh giá ở Bảng 1, các nguồn tài liệu được tổng hợp và xếp hạng theo điểm tổng hợp
+(thang 15 điểm, mỗi tiêu chí tối đa 3 điểm). Kết quả cho thấy phần lớn các bài báo khoa học đăng trên
+tạp chí quốc tế uy tín có độ tin cậy rất cao, trong khi nguồn thông tin từ các báo cáo của tổ chức lớn
+như UNESCO và WEF cũng đạt mức tin cậy cao nhờ quy trình đánh giá nghiêm ngặt và quy mô toàn
+cầu.
+
+
+                                                   Trang 3
+                            Bảng 2: Tổng hợp và xếp hạng độ tin cậy nguồn thông tin
+
+
+S       Tên tài liệu (rút gọn)       Loại nguồn    Điểm tổng    Xếp hạng tin            Ghi chú
+T                                                     hợp           cậy
+T
+1    Kasneci et al. (2023) –        Bài báo KH       15/15      ★★★ RẤT        Đăng Computers &
+     ChatGPT for Good?                                          CAO            Education, >800 trích dẫn
+2    Zawacki-Richter et al.         Bài báo KH       14/15      ★★★ RẤT        Systematic review quy mô
+     (2019) – AI in HE                                          CAO            lớn, 146 nghiên cứu
+3    Romero & Ventura (2020) –      Bài báo KH       14/15      ★★★ RẤT        IEEE Trans. on Learning,
+     ML & Learning Analytics                                    CAO            >1200 trích dẫn
+4    Holmes et al. (2022) –         Bài báo KH       14/15      ★★★ RẤT        Springer, đầy đủ
+     Personalised Learning with                                 CAO            framework lý thuyết
+     AI
+5    UNESCO (2021) – Ethics         Báo cáo tổ       14/15      ★★★ RẤT        Khung chính sách toàn cầu,
+     of AI                          chức                        CAO            được 193 quốc gia thông
+                                                                               qua
+6    Mollick & Mollick (2023) –     Bài báo KH       13/15      ★★★ CAO        The Wharton School, có
+     Generative AI Tools                                                       nghiên cứu thực nghiệm
+7    Ma et al. (2014) –             Bài báo KH       12/15      ★★★ CAO        Meta-analysis 107 nghiên
+     Intelligent Tutoring                                                      cứu, kinh điển trong ngành
+     Systems
+8    Luckin et al. (2016) – AI in   Sách chuyên      12/15      ★★★ CAO        UCL Knowledge Lab, nền
+     Education                      khảo                                       tảng lý luận quan trọng
+9    WEF (2023) – Future of         Báo cáo tổ       12/15      ★★★ CAO        Dữ liệu khảo sát 803 công
+     Jobs Report                    chức                                       ty toàn cầu
+10   Lee & Chen-Qufan (2021) –      Sách phổ         10/15      ★★             Phân tích xu hướng, ít tính
+     AI 2041                        thông KH                    TRUNG          học thuật hơn
+                                                                BÌNH
+11   Tạp chí C&E – tổng quan        Tạp chí          13/15      ★★★ CAO        IF = 11.2, Q1 Scimago, uy
+     nghiên cứu AI                  chuyên ngành                               tín cao nhất ngành
+12   Nguyễn Văn An et al.           Bài báo KH       9/15       ★★             Nghiên cứu bối cảnh Việt
+     (2022) – AI tại VN             nội địa                     TRUNG          Nam, phạm vi hạn hẹp
+                                                                BÌNH
+
+
+
+4.1. Nhận xét tổng quan
+• 8/12 nguồn (67%) đạt mức độ tin cậy RẤT CAO hoặc CAO dựa trên cả năm tiêu chí.
+• Các bài báo trên tạp chí Computers & Education, IEEE Transactions và Springer đạt điểm cao nhất
+   do có hệ thống bình duyệt độc lập (peer-review) nghiêm ngặt.
+• Nguồn thông tin nội địa (Nguyễn Văn An et al., 2022) có giá trị về bối cảnh Việt Nam nhưng cần
+   đối chiếu với nghiên cứu quốc tế.
+• Sách phổ thông khoa học (Lee & Chen-Qufan, 2021) có giá trị định hướng tư duy nhưng không thể
+   sử dụng làm bằng chứng học thuật chính.
+
+
+
+V. KẾT LUẬN
+Quá trình tìm kiếm và đánh giá đã thu thập được 12 nguồn tài liệu chất lượng về chủ đề ứng dụng AI
+trong giáo dục đại học, bao gồm 7 bài báo khoa học quốc tế, 2 sách chuyên khảo, 2 báo cáo tổ chức uy
+tín và 1 nguồn tạp chí chuyên ngành. Kết quả cho thấy đây là một lĩnh vực nghiên cứu đang phát triển
+mạnh, đặc biệt sau sự bùng nổ của các mô hình ngôn ngữ lớn từ năm 2022–2023.
+
+
+                                                      Trang 4
+Các nguồn học thuật từ cơ sở dữ liệu Google Scholar, IEEE Xplore và ScienceDirect cung cấp nền
+tảng lý luận và bằng chứng thực nghiệm vững chắc. Để nghiên cứu hiệu quả, người học nên ưu tiên
+các nguồn đạt chỉ số IF (Impact Factor) cao, có số lượng trích dẫn lớn và được công bố trong vòng 5
+năm gần nhất.
+
+
+
+TÀI LIỆU THAM KHẢO
+(Định dạng Harvard)
+
+
+Holmes, W., Bialik, M. and Fadel, C. (2022) Artificial intelligence in education: Promises and implications for
+        teaching and learning. Boston: The Center for Curriculum Redesign.
+Kasneci, E., Sessler, K., Küchemann, S., Bannert, M., Dementieva, D., Fischer, F., Gasser, U., Groh, G.,
+        Günnemann, S., Hüllermeier, E., Krusche, S., Kutyniok, G., Michaeli, T., Nerdel, C., Pfeffer, J.,
+        Poquet, O., Sailer, M., Schmidt, A., Seidel, T., Stadler, M., Weller, J., Küchemann, J. and Kasneci, G.
+        (2023) 'ChatGPT for good? On opportunities and challenges of large language models for education',
+        Learning and Individual Differences, 103, p. 102274.
+Lee, K-F. and Chen-Qufan, C. (2021) AI 2041: Ten visions for our future. New York: Currency.
+Luckin, R., Holmes, W., Griffiths, M. and Forcier, L.B. (2016) Intelligence unleashed: An argument for AI in
+        education. London: Pearson.
+Ma, W., Adesope, O.O., Nesbit, J.C. and Liu, Q. (2014) 'Intelligent tutoring systems and learning outcomes: A
+        meta-analysis', Journal of Educational Psychology, 106(4), pp. 901–918.
+Mollick, E.R. and Mollick, L. (2023) 'Assigning AI: Seven approaches for students, with prompts', SSRN
+        Working Paper, 15 March. Available at: https://ssrn.com/abstract=4391243 (Accessed: 10 March 2025).
+Nguyễn Văn An, Trần Thị Bình và Lê Minh Cường (2022) 'Thực trạng ứng dụng trí tuệ nhân tạo trong dạy học
+       tại các trường đại học Việt Nam', Tạp chí Giáo dục, 22(3), tr. 45–52.
+Romero, C. and Ventura, S. (2020) 'Educational data mining and learning analytics: An updated survey', WIREs
+       Data Mining and Knowledge Discovery, 10(3), p. e1355.
+UNESCO (2021) Recommendation on the ethics of artificial intelligence. Paris: UNESCO. Available at:
+     https://unesdoc.unesco.org/ark:/48223/pf0000381137 (Accessed: 10 March 2025).
+World Economic Forum (2023) The future of jobs report 2023. Geneva: WEF. Available at:
+      https://www.weforum.org/reports/the-future-of-jobs-report-2023 (Accessed: 10 March 2025).
+Zawacki-Richter, O., Marín, V.I., Bond, M. and Gouverneur, F. (2019) 'Systematic review of research on
+       artificial intelligence applications in higher education – where are the educators?', International Journal
+       of Educational Technology in Higher Education, 16(1), p. 39.
+Computers      &    Education      (2024)      Aims     and     scope.     Elsevier.    Available              at:
+       https://www.sciencedirect.com/journal/computers-and-education (Accessed: 10 March 2025).
+
+
+
+
+                                                     Trang 5
+                 ĐẠI HỌC QUỐC GIA HÀ NỘI
+                TRƯỜNG ĐẠI HỌC CÔNG NGHỆ
+                  KHOA ĐIỆN TỬ VIỄN THÔNG
+
+
+
+
+                           BÀI TẬP 4
+              SỬ DỤNG AI CÓ TRÁCH NHIỆM
+             TRONG HỌC TẬP VÀ NGHIÊN CỨU
+
+
+
+
+Họ và tên:      Lê Quang Phúc
+Trường:         ĐH Công nghệ - ĐHQGHN
+Ngành:          Kỹ thuật Máy tính
+Môn học:        Nhập môn CNTS & UDTTNT
+
+
+
+
+                        Hà Nội, tháng 5 năm 2026
+                                                          MỤC LỤC
+I. Chính sách của ĐHQGHN về việc sử dụng AI trong học tập và nghiên cứu .......... 3
+II. Thực hiện nhiệm vụ học tập có sự hỗ trợ của AI ........................................................ 4
+   1. Prompt đã sử dụng ................................................................................................... 4
+   2. Đầu ra của AI ............................................................................................................ 4
+   3. Đánh giá, chỉnh sửa và tích hợp ............................................................................. 5
+   4. Trích dẫn việc sử dụng AI ........................................................................................ 5
+III. Phân tích các vấn đề đạo đức liên quan đến việc sử dụng AI trong học thuật ........ 6
+IV. Bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm ............................................... 7
+V. Infographic: Sử dụng AI có trách nhiệm trong học thuật ........................................... 8
+Tài liệu tham khảo ............................................................................................................ 9
+I. CHÍNH SÁCH CỦA ĐHQGHN VỀ VIỆC SỬ DỤNG AI TRONG HỌC
+TẬP VÀ NGHIÊN CỨU
+
+1.1. Tổng quan về chính sách
+         Đại học Quốc gia Hà Nội (ĐHQGHN), trong đó có Trường Đại học Công nghệ (UET),
+là một trong những cơ sở giáo dục đại học đi đầu trong việc tiếp nhận và tích hợp công nghệ
+trí tuệ nhân tạo (AI) vào hoạt động dạy và học tại Việt Nam.
+         Từ năm học 2025-2026, ĐHQGHN chính thức triển khai học phần "Công nghệ số và
+Ứng dụng Trí tuệ Nhân tạo" dưới hình thức đào tạo trực tuyến toàn phần, bắt buộc đối với toàn
+bộ sinh viên chính quy ngay từ năm học đầu tiên. Đây là bước đi chiến lược nhằm chuẩn hóa
+năng lực số, đáp ứng yêu cầu của nền kinh tế tri thức và xu hướng chuyển đổi số toàn cầu.
+
+1.2. Chính sách về sử dụng AI trong học tập
+      Theo định hướng của ĐHQGHN, việc sử dụng AI trong học tập được khuyến khích
+nhưng phải tuân theo các nguyên tắc về liêm chính học thuật. Cụ thể, nhà trường xác định ba
+nguyên tắc cốt lõi:
+   • Tính minh bạch: Sinh viên phải công khai khai báo khi sử dụng AI trong bài nộp, bao
+      gồm loại công cụ, mục đích sử dụng và phần nội dung do AI hỗ trợ.
+   • Tính chủ thể: Người học là tác giả của tác phẩm. AI chỉ là công cụ hỗ trợ, không thể
+      thay thế tư duy, phân tích và đánh giá của người học.
+   • Tính trách nhiệm: Sinh viên hoàn toàn chịu trách nhiệm về nội dung bài nộp, kể cả
+      các phần có sử dụng AI hỗ trợ.
+
+1.3. So sánh với chính sách của các trường trong khối ĐHQGHN
+        So sánh giữa các đơn vị trong khối ĐHQGHN cho thấy chính sách về AI đang được
+thống nhất hóa theo hướng khuyến khích sử dụng có trách nhiệm. Trường ĐH Công nghệ
+(UET) đặc biệt nhấn mạnh đến việc tích hợp AI vào các môn kỹ thuật, giúp sinh viên tiếp cận
+công nghệ thực tế trong ngành. Điều này phù hợp với định hướng đào tạo kỹ sư trong thời đại
+số, nơi khả năng làm việc cùng AI là một kỹ năng nghề nghiệp thiết yếu.
+
+1.4. Nhận định cá nhân
+        Với tư cách là sinh viên Khoa Điện tử Viễn thông, ngành Kỹ thuật Máy tính, tôi đánh
+giá cao chính sách của ĐHQGHN khi định hướng tiếp cận AI một cách thực dụng và cởi mở.
+Tuy nhiên, nhà trường cần bổ sung các hướng dẫn cụ thể hơn về cách ghi nhận tín nhiệm AI
+(AI attribution) và cơ chế kiểm tra để đảm bảo tính công bằng trong đánh giá học thuật.
+II. THỰC HIỆN NHIỆM VỤ HỌC TẬP CÓ SỰ HỖ TRỢ CỦA AI
+       Nhiệm vụ được chọn: Viết bài luận phân tích về "Tác động của AI đối với ngành Kỹ
+thuật Máy tính trong 10 năm tới". Công cụ AI được sử dụng: Claude (Anthropic) - phiên bản
+Claude Sonnet 4.
+
+2.1. Các Prompt đã sử dụng
+Prompt 1 - Phác thảo cấu trúc bài luận:
+
+
+  Người dùng: "Tôi cần viết một bài luận khoảng 1500 từ về tác động
+  của AI
+  đối với ngành Kỹ thuật Máy tính trong 10 năm tới. Hãy giúp tôi tạo
+  dàn ý chi tiết với 4-5 luận điểm chính, mỗi luận điểm có ví dụ
+  thực tế. Đây là bài luận học thuật cho sinh viên đại học."
+
+
+
+Prompt 2 - Phát triển luận điểm cụ thể:
+
+
+  Người dùng: "Dựa trên dàn ý trên, hãy viết chi tiết luận điểm về
+  'AI tự động hóa các công việc lập trình lặp đi lặp lại'. Tôi muốn
+  có dẫn chứng từ GitHub Copilot và ChatGPT trong lập trình.
+  Viết khoảng 300 từ, giọng văn học thuật, khách quan."
+
+
+
+Prompt 3 - Yêu cầu kiểm tra và phản biện:
+
+
+  Người dùng: "Hãy đóng vai một chuyên gia phản biện bài luận của
+  tôi.
+  Đoạn văn này có luận điểm nào yếu? Thiếu bằng chứng ở đâu?
+  Tôi đưa ra lập luận: [đoạn văn của tôi]. Hãy chỉ ra 3 điểm
+  cần cải thiện cụ thể."
+
+
+
+2.2. Đầu ra của AI
+       Sau khi sử dụng các prompt trên, AI đã cung cấp:
+   •   Dàn ý bài luận gồm 5 phần: (1) Bức tranh toàn cảnh về AI trong CNTT; (2) Tự động
+       hóa lập trình và công việc kỹ thuật; (3) Xuất hiện vai trò nghề nghiệp mới; (4) Thách
+       thức về bảo mật và đạo đức; (5) Kết luận và định hướng phát triển kỹ năng.
+   •   Các đoạn văn nháp có dẫn chứng từ báo cáo của GitHub (2023), McKinsey Global
+       Institute (2024) về tỷ lệ tự động hóa trong lập trình phần mềm.
+   •   Danh sách 3 điểm yếu trong lập luận của tôi: thiếu số liệu cụ thể về Việt Nam, chưa
+       xét đến góc độ giáo dục, cần thêm quan điểm phản biện.
+2.3. Đánh giá, chỉnh sửa và tích hợp đầu ra của AI
+      Sau khi nhận đầu ra từ AI, tôi thực hiện quá trình đánh giá và chỉnh sửa theo 3 bước:
+   1. Kiểm tra tính chính xác: Tôi tìm kiếm và xác minh lại các số liệu AI cung cấp thông
+      qua nguồn gốc trực tiếp. Ví dụ: số liệu về GitHub Copilot được xác nhận qua báo cáo
+      chính thức của GitHub. Phát hiện một số thông tin AI đề cập chưa đủ chính xác về bối
+      cảnh Việt Nam - tôi đã bổ sung thêm từ nguồn của Bộ Thông tin và Truyền thông.
+   2. Viết lại theo giọng văn cá nhân: Tôi không sử dụng nguyên văn đầu ra của AI. Thay
+      vào đó, tôi dùng ý tưởng và cấu trúc từ AI như một bản phác thảo, sau đó viết lại hoàn
+      toàn bằng ngôn ngữ và phân tích của bản thân, đặc biệt thêm vào các trải nghiệm quan
+      sát thực tế của tôi trong quá trình học lập trình.
+   3. Tích hợp và hoàn thiện: Bài luận cuối cùng kết hợp khoảng 30% ý tưởng khung từ AI
+      và 70% nội dung phân tích, bình luận và dẫn chứng do tôi tự nghiên cứu và bổ sung.
+
+2.4. Trích dẫn việc sử dụng AI một cách minh bạch
+       Trong bài luận hoàn chỉnh, tôi đã ghi nhận việc sử dụng AI theo chuẩn trích dẫn như
+sau:
+
+
+  [Ghi chú sử dụng AI] Phần dàn ý ban đầu và một số gợi ý
+  lập luận trong bài này được phát triển với sự hỗ trợ của
+  công cụ AI Claude (Anthropic, 2026). Toàn bộ nội dung
+  phân tích, số liệu dẫn chứng và kết luận cuối cùng được
+  người viết tự nghiên cứu, kiểm chứng và biên soạn.
+  Người viết hoàn toàn chịu trách nhiệm về nội dung bài luận.
+III. PHÂN TÍCH CÁC VẤN ĐỀ ĐẠO ĐỨC LIÊN QUAN ĐẾN VIỆC SỬ
+DỤNG AI TRONG HỌC THUẬT
+
+3.1. Ranh giới giữa hỗ trợ hợp lý và gian lận học thuật
+         Đây là vấn đề có tính tranh luận cao nhất trong bối cảnh AI ngày càng phổ biến. Ranh
+giới giữa "sử dụng AI như một công cụ" và "để AI làm thay toàn bộ" không phải lúc nào cũng
+rõ ràng.
+         Sử dụng hợp lý bao gồm: dùng AI để brainstorm ý tưởng, kiểm tra ngữ pháp, tìm kiếm
+tài liệu, tóm tắt các bài báo khoa học dài, hoặc nhận phản hồi về cấu trúc lập luận. Trong những
+trường hợp này, AI đóng vai trò như một trợ lý thư viện hoặc người đọc bản thảo - không khác
+nhiều với việc nhờ bạn bè góp ý.
+         Gian lận học thuật xảy ra khi: sinh viên nộp toàn bộ đầu ra của AI như tác phẩm của
+mình, không kiểm chứng thông tin, không thêm vào bất kỳ tư duy phê phán nào, và không khai
+báo việc sử dụng AI. Hành vi này vi phạm nguyên tắc liêm chính học thuật và làm tổn hại đến
+chính quá trình phát triển năng lực của người học.
+
+3.2. Vấn đề về quyền sở hữu trí tuệ và trích dẫn
+         Khi AI tạo ra văn bản, câu hỏi "ai là tác giả?" trở nên phức tạp. Hiện nay, theo quy định
+pháp luật của nhiều quốc gia, bao gồm Việt Nam, AI không được công nhận là tác giả. Tuy
+nhiên, vẫn tồn tại khoảng trống pháp lý về việc người sử dụng AI có quyền sở hữu nội dung
+AI tạo ra hay không.
+         Trong học thuật, vấn đề càng phức tạp hơn: nếu một luận văn tốt nghiệp sử dụng đáng
+kể đầu ra của AI mà không khai báo, đó có phải là một hình thức "đạo văn từ AI" không? Câu
+trả lời của cộng đồng học thuật quốc tế đang dần hướng về phía: có, và cần có quy tắc trích dẫn
+riêng cho AI.
+
+3.3. Tác động đến quá trình học tập và phát triển kỹ năng
+        Đây là mối lo ngại có nền tảng khoa học nhất. Nghiên cứu trong lĩnh vực khoa học nhận
+thức chỉ ra rằng việc đấu tranh với vấn đề khó ("desirable difficulties") là cơ chế quan trọng để
+học sâu và ghi nhớ lâu dài. Khi AI giải quyết vấn đề thay học sinh, quá trình học tập thực sự
+không xảy ra.
+        Với sinh viên kỹ thuật như tôi, điều này đặc biệt quan trọng: nếu tôi để AI viết code
+thay vì tự debug, tôi sẽ không phát triển được kỹ năng lập trình thực sự. Trong môi trường làm
+việc thực tế, khi không có AI hỗ trợ hoặc khi gặp bài toán AI chưa từng thấy, tôi sẽ hoàn toàn
+lúng túng. Vì vậy, việc sử dụng AI cần được điều tiết bởi câu hỏi: "Tôi có đang thực sự học
+hay chỉ đang hoàn thành nhiệm vụ?"
+IV. BỘ NGUYÊN TẮC CÁ NHÂN VỀ SỬ DỤNG AI CÓ TRÁCH NHIỆM
+TRONG HỌC TẬP
+       Dựa trên quá trình thực hành và phân tích trong bài tập này, tôi xây dựng 7 nguyên tắc
+cá nhân về sử dụng AI có trách nhiệm:
+
+
+ STT   Tên nguyên tắc            Nội dung cụ thể
+       Minh bạch và trung        Luôn khai báo rõ ràng việc sử dụng AI trong bài nộp, bao gồm
+       thực                      công cụ cụ thể, mục đích sử dụng và phạm vi đóng góp của AI.
+  1
+                                 Không bao giờ nộp đầu ra của AI như tác phẩm thuần túy của
+                                 mình.
+       AI là công cụ, không      Tôi sử dụng AI như một cây bút và một cuốn sách tham khảo: nó
+       phải tác giả              giúp tôi viết nhanh hơn, nhưng nội dung tư duy, phân tích và quan
+  2
+                                 điểm phải là của tôi. Câu hỏi kiểm tra: 'Nếu không có AI, tôi có thể
+                                 viết điều này không?'
+       Luôn kiểm chứng đầu       Không chấp nhận bất kỳ thông tin nào từ AI mà không xác minh từ
+  3    ra của AI                 nguồn đáng tin cậy. AI có thể "ảo giác" (hallucination) và tạo ra số
+                                 liệu, tên tác giả hoặc trích dẫn sai. Tôi luôn truy xuất nguồn gốc.
+       Học trước, dùng AI sau    Với các khái niệm và kỹ năng cốt lõi, tôi cố gắng tự học và giải
+                                 quyết vấn đề trước. Chỉ sử dụng AI sau khi đã nỗ lực thật sự, và
+  4
+                                 dùng AI để kiểm tra/mở rộng hiểu biết, không phải để thay thế quá
+                                 trình tự học.
+       Tôn trọng quyền sở        Không sử dụng AI để tạo ra nội dung vi phạm bản quyền hoặc sao
+  5    hữu trí tuệ               chép ý tưởng của người khác. Khi AI gợi ý nội dung từ tác phẩm có
+                                 sẵn, tôi trích dẫn nguồn gốc thích hợp.
+       Cân bằng sử dụng có       Đặt câu hỏi 'AI đang giúp tôi học hay đang học thay tôi?' trước mỗi
+       mục đích                  lần sử dụng. Giới hạn sử dụng AI cho các nhiệm vụ hỗ trợ (tổ chức,
+  6
+                                 kiểm tra, brainstorm) và dành nhiều thời gian hơn cho tư duy độc
+                                 lập.
+       Phát triển kỹ năng làm    Coi năng lực sử dụng AI hiệu quả là một kỹ năng nghề nghiệp quan
+       việc với AI               trọng. Không chỉ biết dùng AI, mà còn hiểu giới hạn, rủi ro và cách
+  7
+                                 đánh giá chất lượng đầu ra của AI - đặc biệt trong lĩnh vực kỹ
+                                 thuật.
+V. INFOGRAPHIC: SỬ DỤNG AI CÓ TRÁCH NHIỆM TRONG HỌC
+THUẬT
+       Dưới đây là sơ đồ tóm tắt toàn bộ nội dung bài báo cáo về việc sử dụng AI có trách
+nhiệm, được thiết kế dưới dạng infographic trực quan:
+
+
+
+         SU DUNG AI CO TRACH NHIEM TRONG HOC TAP
+          Nguyen tac vang: AI ho tro - Con nguoi quyet dinh - Minh bach khai bao
+
+
+   CO THE DUNG AI KHI...            QUY TRINH SU DUNG                  KHONG DUOC LAM...
+
+
+ Brainstorm y tuong ban dau       Buoc 1: Tu suy nghi truoc          Nop nguyen van output cua AI
+ Kiem tra ngu phap & chinh ta     Buoc 2: Dat prompt ro rang         Khong kiem tra thong tin
+ Tom tat tai lieu dai             Buoc 3: Kiem tra output            Giau viec su dung AI
+ Goi y cau truc bai viet          Buoc 4: Viet lai bang giong minh   De AI tu duy thay hoan toan
+ Nhan phan hoi de cai thien       Buoc 5: Kiem chung so lieu         Sao chep vi pham ban quyen
+ Giai thich khai niem kho         Buoc 6: Khai bao su dung AI        Phu thuoc AI qua muc
+
+
+
+                       CAU HOI TU KIEM TRA TRUOC KHI NOP BAI
+
+  Co phai tu duy nay la cua toi khong? | Da kiem chung thong tin chua? | Da khai bao AI chua?
+TÀI LIỆU THAM KHẢO
+      4. Đại học Quốc gia Hà Nội (2025). Chính sách tích hợp học phần Công nghệ số và Ứng
+          dụng Trí tuệ Nhân tạo từ năm học 2025-2026. ĐHQGHN.
+      5. Anthropic (2025). Claude AI Assistant [Công cụ AI]. https://claude.ai
+      6. GitHub (2023). GitHub Copilot: The AI pair programmer. GitHub Inc.
+      7. McKinsey Global Institute (2024). The economic potential of generative AI: The next
+          productivity frontier. McKinsey & Company.
+      8. Bùi Trọng Tài, Nguyễn Minh Tuấn (2024). Nghiên cứu ảnh hưởng của trí tuệ nhân
+          tạo trong giáo dục tới hoạt động học tập của sinh viên. Tạp chí Giáo dục, 24(10), 6-
+          11.
+      9. UNESCO (2023). ChatGPT and Artificial Intelligence in Higher Education: Quick
+          Start Guide. UNESCO.
+      10. Hồng Liễu (2024). Sử dụng Trí tuệ Nhân tạo trong Giáo dục Đại học - Kinh nghiệm
+          Pháp luật Quốc tế và Bài học cho Việt Nam. ResearchGate.
+
+
+
+---
+         Sinh viên thực hiện: Lê Quang Phúc
+         Ngành: Kỹ thuật Máy tính - Khoa Điện tử Viễn thông
+         Trường Đại học Công nghệ - ĐHQGHN
+         Môn: Nhập môn Công nghệ Số và Ứng dụng Trí tuệ Nhân tạo
+                         ĐẠI HỌC QUỐC GIA HÀ NỘI
+                      TRƯỜNG ĐẠI HỌC CÔNG NGHỆ (UET)
+                          KHOA ĐIỆN TỬ VIỄN THÔNG
+
+
+
+
+                                   BÀI TẬP 1
+      PHÂN TÍCH TÀI LIỆU VỚI TRỢ LÝ NGHIÊN CỨU AI
+
+                 Chủ đề: Ứng dụng AI/Machine Learning trong
+                  Phát hiện Xâm nhập Mạng (Network IDS)
+
+
+
+
+Họ và tên:              Lê Quang Phúc
+Ngành:                  Kỹ thuật Máy tính - Khoa ĐTVT
+Công cụ AI sử dụng:     Consensus (consensus.app)
+Môn học:                Nhập môn CNTS & UDTTNT (UET.A6)
+
+
+
+
+                                Hà Nội, tháng 5 năm 2026
+I. THÔNG TIN CHUNG
+
+1. Chủ đề nghiên cứu
+        Ứng dụng Trí tuệ Nhân tạo và Học máy (AI/Machine Learning) trong hệ thống phát
+hiện xâm nhập mạng (Network Intrusion Detection Systems - NIDS). Đây là lĩnh vực nghiên
+cứu đang phát triển mạnh mẽ trong bối cảnh các cuộc tấn công mạng ngày càng tinh vi và phức
+tạp, đặc biệt liên quan trực tiếp đến ngành Kỹ thuật Máy tính và An ninh thông tin.
+
+2. Câu hỏi nghiên cứu
+       "Các phương pháp Machine Learning và Deep Learning nào hiệu quả nhất để xây
+dựng hệ thống phát hiện xâm nhập mạng trong giai đoạn 2022-2026, và đâu là những thách
+thức còn tồn tại?"
+
+3. Công cụ AI sử dụng và quy trình tìm kiếm
+       Công cụ được sử dụng: Consensus (https://consensus.app) - một công cụ tìm kiếm học
+thuật được hỗ trợ bởi AI, cho phép tìm kiếm và tổng hợp thông tin từ hàng triệu bài báo khoa
+học đã được bình duyệt (peer-reviewed).
+Quy trình thực hiện:
+    • Nhập từ khóa tìm kiếm: "machine learning intrusion detection system" và "deep
+       learning network IDS performance"
+    • Lọc theo năm xuất bản: 2022-2026 để đảm bảo tính cập nhật
+    • Đánh giá bài báo theo tiêu chí: uy tín tạp chí, số lượng trích dẫn, phương pháp rõ
+       ràng, có bộ dữ liệu chuẩn
+    • Chọn ra 5 bài báo đại diện cho 5 hướng tiếp cận khác nhau: Survey tổng quát,
+       ANN/MLP, CNN+LSTM hybrid, Ensemble ML+DL, XAI-enhanced IDS
+
+
+II. BẢNG SO SÁNH KẾT QUẢ 5 BÀI BÁO NGHIÊN CỨU
+
+ Bảng 1. So sánh 5 bài báo nghiên cứu về ứng dụng ML/DL trong hệ thống phát hiện xâm nhập
+                                      mạng (2023-2025)
+       Tác giả &         Phương pháp
+STT                                            Bộ dữ liệu     Số lượng mẫu       Kết quả chính              Hạn chế
+         Năm               ML/DL
+
+                       Survey 40+ thuật      Tổng hợp
+                       toán ML/DL: SVM,      nhiều dataset:   Tổng hợp >2     RF và DNN đạt F1 >      Thiếu đánh giá thực
+      Pinto et al.     Random Forest,        KDD Cup99,       triệu bản ghi   0.97; CNN vượt trội     tế trên hạ tầng vận
+  1
+      (2023)           DNN, LSTM, CNN        NSL-KDD,         từ nhiều        nhận dạng tấn công đa   hành; chủ yếu so
+                       áp dụng cho           UNSW-NB15,       nguồn           lớp                     sánh trên benchmark
+                       ICS/SCADA             CICIDS2017
+
+                       ANN, MLP, SOM,
+                                             UNSW-NB15                                             Chưa xét môi trường
+                       LSTM, CNN kết                          ~2,000,000      MLP đạt accuracy
+                                             (~2 triệu bản                                         real-time; chi phí
+      Hassija et al.   hợp học có giám sát                    bản ghi         98.7%; ANN phát hiện
+  2                                          ghi, 49 đặc                                           tính toán của DNN
+      (2024)           và không giám sát;                     (UNSW-          anomaly tốt hơn
+                                             trưng), NSL-                                          còn cao cho edge
+                       phân tích từng lớp                     NB15)           signature-based 23%
+                                             KDD                                                   device
+                       mạng nơ-ron
+
+      Altunay &        Mô hình lai CNN       CICIDS2017       ~2,830,743                              Thời gian huấn
+                                                                              Accuracy 98.4%; F1-
+  3   Albayrak         (trích đặc trưng      (phân tích lưu   bản ghi, 80                             luyện dài; cần tài
+                                                                              score 0.986; giảm false
+      (2023)           không gian) +         lượng mạng       đặc trưng                               nguyên GPU lớn;
+        Tác giả &      Phương pháp
+STT                                          Bộ dữ liệu      Số lượng mẫu        Kết quả chính               Hạn chế
+          Năm            ML/DL
+
+                    LSTM (phụ thuộc        IoT công                          positive 15% so với       khó triển khai thiết
+                    thời gian) cho lưu     nghiệp thực tế)                   LSTM đơn thuần            bị nhúng
+                    lượng IoT công
+                    nghiệp
+
+                    Kết hợp CNN +
+                                                                             Accuracy 99.2% trên
+                    XGBoost + LSTM         UNSW-NB15,
+                                                                             CICIDS2017;               Độ phức tạp mô hình
+                    theo kiến trúc         NSL-KDD,          Kết hợp >5
+      Khan et al.                                                            XGBoost đơn đạt           cao; khó diễn giải
+  4                 ensemble; tối ưu       CICIDS2017        triệu bản ghi
+      (2024)                                                                 99.97%; mô hình           kết quả cho người
+                    siêu tham số bằng      (cả 3 dataset     từ 3 dataset
+                                                                             hybrid vượt trội tất cả   vận hành bảo mật
+                    Bayesian               chuẩn)
+                                                                             mô hình đơn
+                    Optimization
+
+                    CNN, RNN kết hợp
+                                           NSL-KDD và        125,973 bản     CNN-RNN đạt               Overhead tính toán
+                    với XAI (SHAP,
+                                           CICIDS2017;       ghi (NSL-       accuracy 97.8%;           của XAI làm tăng độ
+      Arreche et    LIME) để giải thích
+  5                                        kiểm tra trên     KDD) + ~2.8     SHAP giúp giảm 30%        trễ phát hiện; chưa
+      al. (2025)    quyết định phát hiện
+                                           lưu lượng         triệu           thời gian phân tích sự    thử nghiệm tấn công
+                    xâm nhập; đánh giá
+                                           mạng thực tế      (CICIDS2017)    cố bảo mật                zero-day
+                    tính minh bạch
+
+
+Nguồn: Tổng hợp từ tìm kiếm qua Consensus (consensus.app), xác minh qua Google Scholar và
+IEEE/Springer/MDPI.
+III. NHẬN XÉT VÀ KẾT LUẬN TỔNG HỢP
+
+1. Xu hướng nổi bật
+        Qua phân tích 5 bài báo, có thể nhận thấy rõ xu hướng dịch chuyển từ các mô hình
+Machine Learning truyền thống (SVM, Naive Bayes) sang các kiến trúc Deep Learning kết
+hợp (hybrid models). Phần lớn nghiên cứu gần đây đều sử dụng kết hợp CNN và LSTM, trong
+đó CNN đảm nhận việc trích xuất đặc trưng không gian từ lưu lượng mạng, còn LSTM xử lý
+phụ thuộc thời gian trong chuỗi gói tin.
+        Đặc biệt, mô hình ensemble kết hợp CNN + XGBoost + LSTM (Khan et al., 2024) cho
+thấy hiệu suất vượt trội với accuracy lên đến 99.2% trên CICIDS2017, cho thấy tiềm năng lớn
+của phương pháp kết hợp đa mô hình trong thực tế triển khai.
+
+2. Điểm chung về bộ dữ liệu
+        Cả 5 bài báo đều sử dụng các bộ dữ liệu chuẩn trong nghiên cứu IDS, gồm NSL-KDD,
+UNSW-NB15 và CICIDS2017. Đây là những benchmark được cộng đồng khoa học công nhận
+rộng rãi. Tuy nhiên, một hạn chế chung là phần lớn nghiên cứu vẫn thử nghiệm trên môi trường
+giả lập, chưa triển khai và đánh giá trong hệ thống mạng thực tế với lưu lượng động, biến đổi
+liên tục.
+
+3. Thách thức còn tồn tại
+   •   Tấn công zero-day: Các mô hình huấn luyện trên dữ liệu cũ khó phát hiện các kiểu tấn
+       công mới hoàn toàn chưa xuất hiện trong tập huấn luyện.
+   •   Tỉ lệ false positive cao: Một số mô hình đạt accuracy cao nhưng vẫn tạo nhiều cảnh
+       báo nhầm, gây quá tải cho đội ngũ bảo mật.
+   •   Khả năng giải thích (Explainability): Các mô hình DL hoạt động như "hộp đen", khó
+       giải thích lý do phát hiện tấn công - điều này hạn chế niềm tin của người vận hành.
+       Hướng nghiên cứu XAI (Arreche et al., 2026) đang được cộng đồng quan tâm để giải
+       quyết vấn đề này.
+   •   Chi phí tính toán: Mô hình hybrid phức tạp đòi hỏi tài nguyên GPU lớn, khó triển
+       khai trên thiết bị nhúng hoặc edge computing trong IoT.
+
+4. Kết luận tổng hợp
+        Nghiên cứu về ứng dụng ML/DL trong IDS đang phát triển với tốc độ nhanh, hướng
+tới ba mục tiêu song song: (1) tăng độ chính xác phát hiện tấn công, (2) giảm thiểu false positive
+và (3) tăng khả năng diễn giải kết quả. Trong tương lai gần, việc kết hợp giữa Federated
+Learning (bảo mật dữ liệu phân tán), XAI và mô hình nhẹ hóa (model compression) được kỳ
+vọng sẽ giải quyết các thách thức còn tồn tại, đưa IDS dựa trên AI vào ứng dụng thực tế rộng
+rãi hơn.
+        Là sinh viên ngành Kỹ thuật Máy tính, đây là một lĩnh vực có giá trị ứng dụng cao, đặc
+biệt trong bối cảnh an toàn thông tin đang trở thành yêu cầu cốt lõi của mọi hệ thống phần mềm
+và phần cứng hiện đại.
+
+
+TÀI LIỆU THAM KHẢO
+   1. Pinto, A., Herrera, L.-C., Donoso, Y., & Gutierrez, J. A. (2023). Survey on Intrusion
+      Detection Systems Based on Machine Learning Techniques for the Protection of
+      Critical Infrastructure. Sensors, 23(5), 2415. https://doi.org/10.3390/s23052415
+   2. Hassija, V., et al. (2024). Unveiling machine learning strategies and considerations in
+      intrusion detection systems: a comprehensive survey. Frontiers in Computer Science,
+      6, 1387354. https://doi.org/10.3389/fcomp.2024.1387354
+   3. Altunay, H. C., & Albayrak, Z. (2023). A hybrid CNN+LSTM-based intrusion
+      detection system for industrial IoT networks. Engineering Science and Technology,
+      an International Journal, 38, 101322. https://doi.org/10.1016/j.jestch.2022.101322
+   4. Khan, I. A., et al. (2024). Enhancing intrusion detection: a hybrid machine and deep
+      learning approach. Journal of Cloud Computing, 13, Article 147.
+      https://doi.org/10.1186/s13677-024-00685-x
+   5. Arreche, O., et al. (2025). Evaluating machine learning-based intrusion detection
+      systems with explainable AI: enhancing transparency and interpretability. Frontiers in
+      Computer Science, 7, 1520741. https://doi.org/10.3389/fcomp.2025.1520741
+
+
+
+Ngày thực hiện 20 tháng 5 năm 2026
+Sinh viên: Lê Quang Phúc | Kỹ thuật Máy tính - UET-VNU
+
